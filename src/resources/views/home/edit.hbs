@@ -1,0 +1,56 @@
+<div class='mt-4 mb-2'>
+  <h3>Sửa bất động sản</h3>
+
+  <form method='post' action='/homes/{{home._id}}?_method=PUT'>
+    <div class='mb-3 mt-5'>
+      <label for='name' class='form-label'>Tên bất động sản</label>
+      <input type='text' class='form-control' value='{{home.name}}' id='name' name='name'/>
+    </div>
+    {{!-- <div class='mb-3 mt-5'>
+      <label for='type' class='form-label'>Loại</label>
+      <input type='text' class='form-control' value='{{home.type}}' id='type' name='type'/>
+    </div> --}}
+    <div class='mb-3 mt-5'>
+      <label class='form-label'>Loại </label>
+          <select for="type" class="form-control" name="type" id="type">
+            <option selected value="Chung cư">Căn hộ chung cư</option>
+            <option value="Nhà riêng">Nhà riêng mặt phố</option>
+            <option value="Biệt thự">Biệt thự. nhà liền kề</option>                                                        
+          </select>
+    </div>
+    <div class='mb-3 mt-5'>
+      <label for='area' class='form-label'>Diện tích (m2)</label>
+      <input type='text' class='form-control' value='{{home.area}}' id='are' name='are'/>
+    </div>
+    <div class='mb-3 mt-5'>
+      <label for='add' class='form-label'>Tỉnh thành </label>
+          <select class="form-control" name="add">
+            <option selected value="Hồ Chí Minh">Hồ Chí Minh</option>
+            <option value="Hà Nội">Hà Nội</option>
+            <option value="Bến Tre">Bến Tre</option>
+          </select>
+    </div>
+    <div class='mb-3 mt-5'>
+      <label for='price' class='form-label'>Giá /m2</label>
+      <input type='text' class='form-control' value='{{home.price}}' id='price' name='price'/>
+    </div>
+    <div class='mb-3'>
+      <label for='description' class='form-label'>Mô tả</label>
+      <textarea class='form-control' id='description' name='description'> {{home.description}}
+      </textarea>
+    </div>
+    <div class='mb-3'>
+      <label for='image' class='form-label'>Link ảnh </label>
+      <input type='text' class='form-control' value='{{home.image}}' id='image' name='image'/>
+    </div>
+    {{!-- <div class='mb-3'>
+      <label for='imageID' class='form-label'>ID ảnh (https://houseviet.vn/)</label>
+      <input type='text' class='form-control' value='{{home.imageID}}' id='imageID' name='imageID'/>
+    </div>
+    <div class='mb-3'>
+      <label for='dateID' class='form-label'>ID ngày (https://houseviet.vn/)</label>
+      <input type='text' class='form-control' value='{{home.dateID}}' id='dateID' name='dateID'/>
+    </div> --}}
+    <button type='submit' class='btn btn-primary'>Upload</button>
+  </form>
+</div>

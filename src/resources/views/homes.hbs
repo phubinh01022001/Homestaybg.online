@@ -1,0 +1,23 @@
+<div class='mt-4' style="padding-top: 100px;">
+  <div class='row'>
+
+    {{#each home}}
+      <div class='col-sm-6 col-lg-4'>
+        <div class='card card-couser-item'>
+          <a href='/homes/{{this.slug}}'>
+            <img src='{{this.image}}' class='card-img-top' alt='{{this.image}}'/>
+          </a>
+          <div class='card-body'>
+            <a href='/homes/{{this.slug}}'>
+              <h5 class='card-text'>{{this.name}}</h5>
+            </a>
+            <p class='card-text'>{{this.description}}</p>
+            <p class='card-text'>{{this.price}}</p>
+            <a href='#' class='btn btn-primary'>Xem</a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+
+  </div>
+</div>

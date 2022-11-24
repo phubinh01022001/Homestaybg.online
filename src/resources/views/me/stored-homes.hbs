@@ -1,0 +1,87 @@
+<div class="mt-4" style="padding-top: 40px;">
+    <div>
+      <h1>Danh sách bất động sản đã đăng</h3>
+      {{!-- {{#if deletedCount}} --}}
+      <a href="/me/trash/homes">Trùng rác ({{deletedCount}})</a>
+      {{!-- {{/if}} --}}
+    </div>
+    <table class="table mt-4">
+        <thead> 
+            <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Tên bất động sản</th>
+                <th scope="col">Diện tích(m2)</th>
+                <th scope="col">Tỉnh thành</th>
+                <th scope="col">Loại </th>
+                <th scope="col">Mô tả</th>
+                <th scope="col">Giá /m2</th>
+                <th scope="col">Thời gian tạo</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each homes}}
+            <tr>
+                <th scope="row">{{sum @index 1}}</th>
+                <td>{{this.name}}</td>
+                <td>{{this.area}}</td>
+                <td>{{this.add}}</td>
+                <td>{{this.type}}</td>
+                <td>{{this.description}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this.createdAt}}</td>
+                <td>
+                  <a href="/homes/{{this._id}}/edit" class="btn btn-success">Sửa</a>  
+                </td>
+                <td>
+                  <button class="btn btn-danger " data-toggle="modal" data-id="{{this._id}}" data-target="#delete-homes">Xóa</button>
+                </td>
+            </tr>
+            {{else}}
+            <tr>
+              <td colspan="5" class="text-center">Bạn chưa đăng bất động sản nào
+                <a href="/homes/create"> Đăng ngay</a>
+              </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+{{!-- Confirm delete --}}
+<div class="modal fade" id="delete-homes" tabindex="-1" aria-labelledby="delete-homes-label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><h4><b>Xóa bất động sản này?</b></span></h4>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Mục xóa sẽ vẫn còn được lưu 1 bản trong "Thùng rác"
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+        <button id="btn-delete" type="button" class="btn btn-danger">Xóa bỏ</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form name="delete-form" method="post"></form>
+
+<script>
+    var homeId;
+    var deleteForm = document.forms['delete-form'];
+    var btnDelete = document.getElementById('btn-delete');
+
+    $('#delete-homes').on('show.bs.modal', function(event){
+        var button = $(event.relatedTarget);
+        homeId = button.data('id');
+    });
+
+    btnDelete.onclick = function () {
+        deleteForm.action = '/homes/' + homeId + '?_method=delete';
+        deleteForm.submit();
+    };
+</script>

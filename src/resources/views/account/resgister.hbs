@@ -1,0 +1,103 @@
+<div class="row mb-4">
+    <div class="col-2"></div>
+    <div class="col-8" style="padding-top: 50px">
+        <form method="post" action="/account/login"> 
+            <h3 style="text-align: center;" class="mb-4"><b>Đăng kí tài khoản</b></h3>
+            <div class="mb-3">
+                <label for="txtUser" class="form-label">Username</label>
+                <input type="text" name="username" class="form-control" id="txtUser" onblur="checkUser()" placeholder="Nhập username...">
+                <p><span id="checkedUser" style="color: red;"></span></p>
+            </div>
+            <div class="mb-3">
+                <label for="txtPass" class="form-label">Password</label>
+                <input type="password" name="passwork" class="form-control" id="txtPass" onblur="checkPass()" placeholder="Nhập password...">
+                <p><span id="checkedPass" style="color: red;"></span></p>
+            </div>
+            <div class="mb-3">
+                <label for="txtCPass" class="form-label">Confirm password</label>
+                <input type="password" name="" class="form-control" id="txtCPass" onblur="checkCPass()" placeholder="Xác nhận password...">
+                <p><span id="checkedCPass" style="color: red;"></span></p>
+            </div>
+            <div class="mb-3">
+                <label for="txtName" class="form-label">Name</label>
+                <input type="text" name="fullname" class="form-control" id="txtName" onblur="checkName()" placeholder="Nhập họ và tên...">
+                <p><span id="checkedName" style="color: red;"></span></p>
+            </div>
+            <div class="mb-3">
+                <label for="txtBirth" class="form-label">Birthday</label>
+                <input type="date" name="birthday" class="form-control" id="txtBirth">
+                {{!-- <p><span id="checkedBirth" style="color: red;"></span></p> --}}
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputAdd" class="form-label">Address</label>
+                <input type="text" name="address" class="form-control" id="exampleInputAdd"  placeholder="Nhập địa chỉ...">
+            </div>
+
+            {{!-- <button type="submit" id="submit" class="btn btn-primary">Register</button> --}}
+            <button type="submit" id="submit" disabled="true" onpointermove="openButton()" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+    <div class="col-2"></div>
+</div>
+
+<script>
+    function checkUser() {
+            var user = document.getElementById("txtUser").value;
+            var userRegex = /^([A-Za-z0-9]){6,}$/;
+            if (userRegex.test(user) == false){
+                document.getElementById("checkedUser").innerHTML = "Username không được bỏ trống và hơn 6 kí tự!!!";
+                return false;
+            }
+            else {
+                document.getElementById("checkedUser").innerHTML = ""; 
+                return true;
+            }
+        }
+           
+    function checkPass() {
+            var pass = document.getElementById("txtPass").value;
+            var regex = /^(\w+){6,}$/;
+            if(regex.test(pass) == false) {
+                document.getElementById("checkedPass").innerHTML = "Nhập hơn 6 kí tự";
+            return false;
+            } 
+            else {
+                document.getElementById("checkedPass").innerHTML = ""; 
+                return true;
+            }
+        }       
+
+    function checkCPass() {
+            var pass = document.getElementById("txtPass").value;
+            var cPass = document.getElementById("txtCPass").value;
+            if(pass != cPass) {
+                document.getElementById("checkedCPass").innerHTML = "Mật khẩu khác!!!";
+                return false;
+            } 
+            else {
+                document.getElementById("checkedCPass").innerHTML = ""; 
+                return true;
+            }
+        }    
+            
+    function checkName() {
+            var name = document.getElementById("txtName").value;
+            var nameRegex = /^([A-Z]{1}[a-z]*\s)*([A-Z]{1}[a-z]*){1}$/;
+            if(nameRegex.test(name) == false) {
+                document.getElementById("checkedName").innerHTML = "Viết hoa chữ cái đầu,không bỏ dấu và hơn 1 từ!!!";
+                return false;
+            } 
+            else {
+                document.getElementById("checkedName").innerHTML = ""; 
+                return true;
+            }
+        }
+    
+    function openButton(){
+            if(checkUser() == true && checkName() == true && 
+            checkPass() == true && checkCPass() == true){
+                document.getElementById("submit").disabled = false;
+            } else document.getElementById("submit").disabled = true;
+        }
+</script>
+

@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-4"><b></b></div>
+    <div class="col-4" style="padding-top: 100px;">
+        <form method="post" action="/account/store_res" style="font-size:larger"> 
+            <h3 style="text-align: center;"><b>Thông tin cá nhân</b></h3><br>
+            <div class="mb-3 row">
+                <label for="txtUser" class="form-label col-4"><b>Tài khoản:</b></label>
+                <span class="col-8"> {{user.username}} </span>
+            </div>
+            <div class="mb-3 row">
+                <label for="txtPass" class="form-label col-4"><b>Mật khẩu:</b></label>
+                <span class="col-8"> {{user.passwork}} </span>
+            </div>
+            <div class="mb-3 row">
+                <label for="txtName" class="form-label col-4"><b>Họ tên:</b></label>
+                <span class="col-8"> {{user.fullname}} </span>
+            </div>
+            <div class="mb-3 row">
+                <label for="txtBirth" class="form-label col-4"><b>Sinh nhật:</b></label>
+                <span class="col-8"> {{user.birthday}} </span>
+            </div>
+            <div class="mb-3 row">
+                <label for="exampleInputAdd" class="form-label col-4"><b>Địa chỉ:</b></label>
+                <span class="col-8"> {{user.address}} </span>
+            </div>
+        </form>
+    </div>
+    <div class="col-4"><b></b></div>
+</div>

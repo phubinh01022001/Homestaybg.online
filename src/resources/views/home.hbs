@@ -1,0 +1,1809 @@
+{{!-- Phần tìm kiếm --}}
+<section class="banner banner-home mb-4">
+	<form class="search search-home" action="/homes/search" method="get">
+		<div class="search-nav">
+			<label class="search-nav-type">
+				<input name="Type" aria-label="Search type" type="radio" checked="" value="1">
+				<span class="nav-type-name">Tìm kiếm nhà đất</span>
+			</label>
+		</div>
+		<div class="search-container">
+			<div class="row g-2">
+				<div class="col-1">
+
+				</div>
+				<div class="col-8 search-input">
+					<div class="search-input-container">
+						<div class="search-input-inner">
+							<div class="input-group">
+								<input class="form-control search-input-control" name="txtName" placeholder="Nhập tên bất động sản..." autocomplete="off">
+							</div> 
+						</div>
+					</div>
+				</div>
+				<div class="col-1">
+					<button id="btnSearch" class="btn-search" type="submit" style="height: 43px;">
+						<box-icon name='search-alt-2' animation='tada'></box-icon>
+						<span>Tìm kiếm </span>
+					</button>
+				</div>
+			</div>
+			<div class="search-row g-2">
+				<div class="col-10">
+					<div class="row">
+						<div class="col-3">
+							<div class="dropdown-input">
+								<div class="dropdown-section" id="City" data-control="search">
+									<select for="add" id="add" name="add" class="form-control">
+										<option selected value="all-city">
+											<span style="margin: auto;">Toàn quốc</span>
+										</option>
+										<option value="Bến Tre">Bến Tre</option>
+										<option value="Hồ Chí Minh">Hồ Chí Minh</option>
+										<option value="Hà Nội">Hà Nội</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="dropdown-input">
+								<div class="dropdown-section" id="Price" data-control="search">
+									<select class="form-control">
+										<option selected value="all-price">
+											<span style="margin: auto;">Mức giá (/m2)</span>
+										</option>
+										<option value="under-100">Dưới 100 000 000vnđ</option>
+										<option value="under-300">Dưới 300 000 000vnđ</option>
+										<option value="under-1000">Dưới 1 000 000 000vnđ</option>
+										<option value="above-1000">Trên 1 000 000 000vnđ</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="dropdown-input">
+								<div class="dropdown-section" id="Area" data-control="search">
+									<select class="form-control">
+										<option selected value="all-area">
+											<span style="margin: auto;">Diện tích (m2)</span>
+										</option>
+										<option value="dt100">Dưới 100m2</option>
+										<option value="dt300">Dưới 300m2</option>
+										<option value="dt300plus">Trên 300m2</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="dropdown-input">
+								<select class="form-control">
+									<option selected>
+										<span style="margin: auto;">Lọc thêm</span>
+									</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</form>
+</section>
+
+<!-- Phần dự án nổi bật -->
+<section class="section home-project mb-4">
+	<div class="container">
+		<div class="section-title section-title-under section-title-center mb-2 pb-2 fs-5">Các dự án nổi bật</div>
+		<div class="text-center text-helper">Tổng hợp danh sách các dự án có lượt theo dõi cao</div>
+		<div class="home-project-content">
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
+			<div class="swiper-container py-3" id="project-hot">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<a title="THE PARK AVENUE ĐƯỜNG 3/2" class="link-dark card shadow-sm"
+							href="http://localhost:3000/homes/dong-ho-lennox-silver">
+							<div class="card-head">
+								<div class="sale-launch opening">
+									<span> Đang mở bán </span>
+								</div>
+								<img class="swiper-image card-head-img rounded-top" alt="THE PARK AVENUE ĐƯỜNG 3/2"
+									src="https://cdn.houseviet.vn/images/post/29072022/133035826152341117-840x535.jpg">
+							</div>
+							<div class="card-body">
+								<div class="ribbon-top text-bold fs-5">5 triệu 6 / m2</div>
+								<div class="card-title text-capitalize text-bold fs-6">THE PARK AVENUE ĐƯỜNG 3/2</div>
+								<div class="d-flex mb-1 fs-7">
+									<box-icon type='solid' name='city'></box-icon>
+									<span class="w-99 d-inline-block text-truncate"> Trung Mỹ Tây, quận 12, tp HCM
+									</span>
+								</div>
+								<div class="d-flex mb-1 fs-7">
+									<box-icon type='solid' name='traffic-barrier'></box-icon>
+									<span class="pe-2">Quy mô:</span> 200m2
+								</div>
+								<div class="d-flex mb-1 fs-7">
+									<box-icon name='shield-plus'></box-icon>
+									<span class="pe-2">Pháp lý:</span> Sở hữu lâu dài
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a title="Marina City Mũi Né" class="link-dark card shadow-sm"
+							href="http://localhost:3000/homes/dong-ho-brecken-gunmetal-mesh">
+							<div class="card-head">
+								<div class="sale-launch opening">
+									<span> Đang mở bán </span>
+								</div>
+								<img class="swiper-image card-head-img rounded-top" alt="Marina City Mũi Né"
+									src="https://cdn.houseviet.vn/images/post/22072022/133029743827499619-840x535.jpg">
+							</div>
+							<div class="card-body">
+								<div class="ribbon-top text-bold fs-5">1 tr 299 /m2</div>
+								<div class="card-title text-capitalize text-bold fs-6">Marina City Mũi Né</div>
+								<div class="d-flex mb-1 fs-7">
+									<box-icon type='solid' name='city'></box-icon>
+									<span class="w-99 d-inline-block text-truncate"> Thành phố Hồ Chí Minh
+									</span>
+								</div>
+								<div class="d-flex mb-1 fs-7">
+									<box-icon type='solid' name='traffic-barrier'></box-icon>
+									<span class="pe-2">Quy mô:</span> 240m2
+								</div>
+								<div class="d-flex mb-1 fs-7">
+									<box-icon name='shield-plus'></box-icon>
+									<span class="pe-2">Pháp lý:</span> Sở hữu lâu dài
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a title="CĂN HỘ MASTERI LUMIERE BOULEVARD" class="link-dark card shadow-sm"
+							href="http://localhost:3000/homes/dong-ho-co-logo-dylan-silver-tone-va-silicone">
+							<div class="card-head">
+								<div class="sale-launch opening">
+									<span> Đang mở bán </span>
+								</div>
+								<img class="swiper-image card-head-img rounded-top" alt="CĂN HỘ MASTERI LUMIERE BOULEVARD"
+									src="https://cdn.houseviet.vn/images/post/18082022/133052297703903690-840x535.jpg">
+							</div>
+							<div class="card-body">
+								<div class="ribbon-top text-bold fs-5">1099000 / m2</div>
+								<div class="card-title text-capitalize text-bold fs-6">CĂN HỘ MASTERI LUMIERE BOULEVARD</div>
+								<div class="d-flex mb-1 fs-7">
+									<box-icon type='solid' name='city'></box-icon>
+									<span class="w-99 d-inline-block text-truncate"> 169b huyện Châu Thành, BT
+									</span>
+								</div>
+								<div class="d-flex mb-1 fs-7">
+									<box-icon type='solid' name='traffic-barrier'></box-icon>
+									<span class="pe-2">Quy mô:</span> 170 m2
+								</div>
+								<div class="d-flex mb-1 fs-7">
+									<box-icon name='shield-plus'></box-icon>
+									<span class="pe-2">Pháp lý:</span> Sở hữu lâu dài
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a title="DỰ ÁN THE MATRIX ONE" class="link-dark card shadow-sm"
+							href="http://localhost:3000/homes/dong-ho-lennox-silver-tone">
+							<div class="card-head">
+								<div class="sale-launch opening">
+									<span> Đang mở bán </span>
+								</div>
+								<img class="swiper-image card-head-img rounded-top" alt="DỰ ÁN THE MATRIX ONE"
+									src="https://cdn.houseviet.vn/images/post/06092022/133069454744424626-840x535.jpg">
+							</div>
+							<div class="card-body">
+								<div class="ribbon-top text-bold fs-5">1499000 / m2</div>
+								<div class="card-title text-capitalize text-bold fs-6">DỰ ÁN THE MATRIX ONE</div>
+								<div class="d-flex mb-1 fs-7">
+									<box-icon type='solid' name='city'></box-icon>
+									<span class="w-99 d-inline-block text-truncate"> quận 5, tp Ho Chi Minh
+									</span>
+								</div>
+								<div class="d-flex mb-1 fs-7">
+									<box-icon type='solid' name='traffic-barrier'></box-icon>
+									<span class="pe-2">Quy mô:</span> 145 m2
+								</div>
+								<div class="d-flex mb-1 fs-7">
+									<box-icon name='shield-plus'></box-icon>
+									<span class="pe-2">Pháp lý:</span> Sở hữu lâu dài
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="text-center mt-2">
+		<a title="Xem tất cả dự án" class="btn btn-white border-primary text-uppercase link-primary" href="">
+			Xem tất cả dự án
+		</a>
+	</div>
+</section>
+
+<!-- Phần tin tức -->
+<section class="section home-news py-4">
+	<div class="container">
+		<div class="section-title section-title-under section-title-center mb-3 pb-2 fs-5">
+			Tin tức nổi bật
+		</div>
+		<div class="text-center text-helper mb-4">
+			Tổng hợp tin tức thị trường bất động sản, thông tin luật thay đổi, cập nhật liên quan tới thị trường nhà
+			đất.
+		</div>
+		<div class="row">
+			<div class="col-9">
+				<div class="row">
+					<div class="col-4 block-left">
+						<a title="Tâm điểm mới của vùng kinh tế trọng điểm Bắc Bộ"
+							class="link-dark card rounded"
+							href="/news/newHot">
+							<div class="card-head">
+								<img style="width:99%" class="card-head-img"
+									alt="tâm điểm mới của vùng kinh tế trọng điểm Bắc Bộ"
+									src="https://i1-kinhdoanh.vnecdn.net/2022/11/21/image007-1669008875-3123-1669008990.jpg?w=240&h=144&q=100&dpr=1&fit=crop&s=rdJuRzFcS9cxT9eBxji99A">
+							</div>
+							<div class="card-body p-2">
+								<div class="card-title text-bold">Phía đông Hà Nội - tâm điểm mới của vùng kinh tế trọng điểm Bắc Bộ
+								</div>
+								<p class="card-text fs-7">
+									<box-icon name='time-five'></box-icon>
+									</i>19/06/2022 - 20:48
+								</p>
+							</div>
+						</a>
+						<a title="Khách mua nhà phố Phúc An Asuka được vay vốn 5 năm"
+							class="link-dark card rounded mt-3"
+							href="/news/phucAn">
+							<div class="card-head">
+								<img style="width:99%" class="card-head-img"
+									alt="Khách mua nhà phố Phúc An Asuka được vay vốn 5 năm"
+									src="https://i1-kinhdoanh.vnecdn.net/2022/11/18/phucan-1668768422-9897-1668769593.jpg?w=240&h=144&q=100&dpr=1&fit=crop&s=ppCpgkzwJ4COHDuSrvIUmQ">
+							</div>
+							<div class="card-body p-2">
+								<div class="card-title text-bold">Khách mua nhà phố Phúc An Asuka được vay vốn 5 năm
+								</div>
+								<p class="card-text fs-7">
+									<box-icon name='time-five'></box-icon>
+									</i>24/03/2022 - 22:06
+								</p>
+							</div>
+						</a>
+					</div>
+					<div class="col-8 block-center">
+						<a title="Vinhomes Ocean Park 3 - The Crown"
+							class="card rounded link-dark shadow-sm"
+							href="/news/vinhomes">
+							<div class="card-head">
+								<img class=""
+									src="https://scontent.fsgn2-6.fna.fbcdn.net/v/t1.15752-9/248346372_392121292625221_2880944561028872605_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=ae9488&_nc_ohc=l1jmgLMFVl0AX8illwV&_nc_ht=scontent.fsgn2-6.fna&oh=03_AdS6ibauIvdwpHAMaMtLU2kEyb58kJLJDHQeozdM-EPneQ&oe=63A4EA32">
+							</div>
+							<div class="card-body">
+								<div class="card-title text-bold fs-5">
+									Những yếu tố tạo giá trị cho Vinhomes Ocean Park 3 - The Crown
+								</div>
+								<p class="card-time fs-7">
+									<box-icon name='time-five'></box-icon>
+									18/10/2022 - 12:59
+								</p>
+								<p class="card-text">
+									Dự án nổi bật với phong cách sống  nghỉ dưỡng và chính sách bán hàng nhiều ưu đãi của chủ đầu tư đã tạo nên sức nóng cho
+                            		thị trường phía đông Hà Nội.
+								</p>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="block-right" style="margin-left: 3px;">
+					<div class="text-uppercase text-bold text-dark-yellow mb-3">
+						<box-icon name='news' type='solid' animation='tada' ></box-icon>
+						</i>Tin khác
+					</div>
+
+					<a class="a-right" title="Sunshine Group tập trung phát triển tiện ích tại chuỗi dự án"
+						href="/news/phucAn">
+						<div class="card rounded">
+							<div class="row g-0 mb-1">
+								<div class="col-4">
+									<div class="card-head">
+										<img class="card-head-img rounded-start "
+											alt="Sunshine Group tập trung phát triển tiện ích tại chuỗi dự án"
+											src="https://i1-kinhdoanh.vnecdn.net/2022/11/21/imageextractword0out1719166876-7610-4372-1668996845.png?w=240&h=144&q=100&dpr=1&fit=crop&s=mZe-Ds9dl8KDuRaTdpA7dA">
+									</div>
+								</div>
+								<div class="col-8">
+									<div class="card-body p-2">
+										<p class="card-title text-bold text-dark m-0 fs-7">
+											Sunshine Group tập trung phát triển tiện ích tại chuỗi dự án
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</a>
+					<a class="a-right" title="Doanh nghiệp bất động sản củng cố nội lực để tồn tại"
+						href="/news/phucAn">
+						<div class="card rounded">
+							<div class="row g-0 mb-1">
+								<div class="col-4">
+									<div class="card-head">
+										<img class="card-head-img rounded-start "
+											alt="Doanh nghiệp bất động sản củng cố nội lực để tồn tại"
+											src="https://i1-kinhdoanh.vnecdn.net/2022/11/21/e49b4293983e1841c1446d7886b2f5-9270-9633-1668996320.jpg?w=240&h=144&q=100&dpr=1&fit=crop&s=zv0k7QibyqID6ktUd4tW5w">
+									</div>
+								</div>
+								<div class="col-8">
+									<div class="card-body p-2">
+										<p class="card-title text-bold text-dark m-0 fs-7">
+											Doanh nghiệp bất động sản củng cố nội lực để tồn tại
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</a>
+					<a class="a-right" title="West C Masteri West Heights"
+						href="/news/phucAn">
+						<div class="card rounded">
+							<div class="row g-0 mb-1">
+								<div class="col-4">
+									<div class="card-head">
+										<img class="card-head-img rounded-start "
+											alt="West C Masteri West Heights"
+											src="https://i1-kinhdoanh.vnecdn.net/2022/11/18/Image-ExtractWord-2-Out-2502-1668742105.png?w=240&h=144&q=100&dpr=1&fit=crop&s=ZG3qwYMRlEr1cdm2uZ4nfg">
+									</div>
+								</div>
+								<div class="col-8">
+									<div class="card-body p-2">
+										<p class="card-title text-bold text-dark m-0 fs-7">
+											Căn hộ West C Masteri West Heights sở hữu ba tầm nhìn cao căp
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</a>
+					<a class="a-right" title="VMI kết nối các nhà đầu tư nhỏ cùng hợp tác kinh doanh"
+						href="/news/phucAn">
+						<div class="card rounded">
+							<div class="row g-0 mb-1">
+								<div class="col-4">
+									<div class="card-head">
+										<img class="card-head-img rounded-start "
+											alt="VMI kết nối các nhà đầu tư nhỏ cùng hợp tác kinh doanh"
+											src="https://i1-kinhdoanh.vnecdn.net/2022/11/19/anh-2-jpeg-8125-1668767689-166-5117-6415-1668822144.jpg?w=240&h=144&q=100&dpr=1&fit=crop&s=cwPG8nUgJ5jAOLuyexk1rA">
+									</div>
+								</div>
+								<div class="col-8">
+									<div class="card-body p-2">
+										<p class="card-title text-bold text-dark m-0 fs-7">
+											VMI kết nối các nhà đầu tư nhỏ cùng hợp tác kinh doanh
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</a>
+					<a class="a-right" title="Tiện ích chăm sóc sức khỏe tại Ixora Ho Tram by Fusion"
+						href="/news/phucAn">
+						<div class="card rounded">
+							<div class="row g-0 mb-1">
+								<div class="col-4">
+									<div class="card-head">
+										<img class="card-head-img rounded-start "
+											alt="Tiện ích chăm sóc sức khỏe tại Ixora Ho Tram by Fusion"
+											src="https://i1-kinhdoanh.vnecdn.net/2022/11/18/124-1668748667-5629-1668748734.jpg?w=240&h=144&q=100&dpr=1&fit=crop&s=vNtbdK05FT7_DmfkprIArQ">
+									</div>
+								</div>
+								<div class="col-8">
+									<div class="card-body p-2">
+										<p class="card-title text-bold text-dark m-0 fs-7">
+											Tiện ích chăm sóc sức khỏe tại Ixora Ho Tram by Fusion
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</a>
+					<a class="a-right" title="Cư dân Valley of Dreams II - Luxury hưởng lợi từ tiện ích giáo dục quốc tế"
+						href="/news/phucAn">
+						<div class="card rounded">
+							<div class="row g-0 mb-1">
+								<div class="col-4">
+									<div class="card-head">
+										<img class="card-head-img rounded-start "
+											alt="Cư dân Valley of Dreams II - Luxury hưởng lợi từ tiện ích giáo dục quốc tế"
+											src="https://i1-kinhdoanh.vnecdn.net/2022/11/18/hinh-1-thumnail-1668768033-5836-1668768065.jpg?w=240&h=144&q=100&dpr=1&fit=crop&s=AxWmEqOeUQwSeZ2k88M0pw">
+									</div>
+								</div>
+								<div class="col-8">
+									<div class="card-body p-2">
+										<p class="card-title text-bold text-dark m-0 fs-7">
+											Cư dân Valley of Dreams II - Luxury hưởng lợi từ tiện ích giáo dục quốc tế
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="text-center mt-3">
+			<a class="btn-danger text-white rounded text-uppercase px-3 py-2 d-inline-block"
+				href="/news">
+				Xem thêm tin tức
+				<i class="icon-right-arrow-line">
+
+				</i>
+			</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	.search-home {
+		left: 50%;
+		top: 0px;
+		transform: translate(-50%, 0px);
+		position: absolute;
+		z-index: 9;
+		width: 61.25rem;
+		padding-top: 2rem;
+	}
+
+	.search-home {
+		padding-top: 2rem;
+	}
+
+	.search-home {
+		padding-top: 2rem;
+	}
+
+	.position-relative,
+	.dropdown-selection-item,
+	.dropdown-selection-group,
+	.banner {
+		position: relative !important;
+	}
+
+	.mb-4 {
+		margin-bottom: 1.5rem !important;
+	}
+
+	.banner {
+		width: 100%;
+	}
+
+	/* @media all and (max-width:1870px) and (min-width:1600px) */
+	.banner {
+		height: 32rem;
+	}
+
+	/* @media all and (max-width:1600px) and (min-width:1400px) */
+	.banner {
+		height: 29rem;
+	}
+
+	.overflow-hidden,
+	.header-main .navbar a,
+	.card-head,
+	.main-content {
+		overflow: hidden !important;
+	}
+
+	.main-content {
+		min-height: 30rem;
+	}
+
+	body {
+		margin: 0;
+		font-family: var(--font-sans-serif);
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 1.5;
+		color: #3f3424;
+		background-color: #f4f2f0;
+		-webkit-text-size-adjust: 100%;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
+
+	:root {
+		--blue: #0d6efd:;
+		--indigo: #6610f2:;
+		--purple: #6f42c1:;
+		--pink: #d63384:;
+		--red: #ef5350:;
+		--orange: #fd7e14:;
+		--yellow: #ffb800:;
+		--green: #33a837:;
+		--teal: #20c997:;
+		--cyan: #0dcaf0:;
+		--white: #fff:;
+		--gray: #6c757d:;
+		--gray-dark: #343a40:;
+		--primary: #cfa267:;
+		--secondary: #6c757d:;
+		--success: #33a837:;
+		--info: #0dcaf0:;
+		--warning: #ffb800:;
+		--danger: #ef5350:;
+		--light: #f8f9fa:;
+		--dark: #3f3424:;
+		--dark-yellow: #b87926:;
+		--font-sans-serif: "Asap", sans-serif:;
+		--gradient: linear-gradient(180deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, 0)):;
+	}
+
+	.search-home .search-nav {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.p-3,
+	.search-home .search-container,
+	.dialog-body {
+		padding: 1rem !important;
+	}
+
+	.search-home .search-container {
+		min-height: 6rem;
+		background-color: rgba(0, 0, 0, .5);
+		border-top-right-radius: 0.37rem;
+		border-bottom-right-radius: 0.37rem;
+		border-bottom-left-radius: 0.37rem;
+	}
+
+	.row,
+	.search-row {
+		--gutter-x: 1.5rem:;
+		--gutter-y: 0:;
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: calc(var(--gutter-y)*-1);
+		margin-right: calc(var(--gutter-x)*-.5);
+		margin-left: calc(var(--gutter-x)*-.5);
+	}
+
+	.g-2,
+	.gx-2 {
+		--gutter-x: .5rem:;
+	}
+
+	.g-2,
+	.gy-2 {
+		--gutter-y: .5rem:;
+	}
+
+	.mt-3,
+	.search-row,
+	.social-login.facebook {
+		margin-top: 1rem !important;
+	}
+
+	.row>*,
+	.search-row>* {
+		flex-shrink: 0;
+		width: 100%;
+		max-width: 100%;
+		padding-right: calc(var(--gutter-x)*.5);
+		padding-left: calc(var(--gutter-x)*.5);
+		margin-top: var(--gutter-y);
+	}
+
+	.col-10 {
+		flex: 0 0 auto;
+		width: 83.33%;
+	}
+
+	.col-2 {
+		flex: 0 0 auto;
+		width: 16.66%;
+	}
+
+	button {
+		border-radius: 0;
+	}
+
+	input,
+	button,
+	select,
+	optgroup,
+	textarea {
+		margin: 0;
+		font-family: inherit;
+		font-size: inherit;
+		line-height: inherit;
+	}
+
+	button,
+	select {
+		text-transform: none;
+	}
+
+	button,
+	[type=button],
+	[type=reset],
+	[type=submit] {
+		-webkit-appearance: button;
+	}
+
+	.btn,
+	.dialog-button {
+		display: inline-block;
+		font-weight: 400;
+		line-height: 1.5;
+		color: #3f3424;
+		text-align: center;
+		text-decoration: none;
+		vertical-align: middle;
+		cursor: pointer;
+		user-select: none;
+		background-color: transparent;
+		border: 1px solid transparent;
+		padding: .375rem .75rem;
+		font-size: 1rem;
+		border-radius: .25rem;
+		transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+	}
+
+	.text-end {
+		text-align: right !important;
+	}
+
+	.w-100,
+	.dropdown-selection-group,
+	.header-main,
+	.dialog-button,
+	.dialog {
+		width: 100% !important;
+	}
+
+	button:not(:disabled),
+	[type=button]:not(:disabled),
+	[type=reset]:not(:disabled),
+	[type=submit]:not(:disabled) {
+		cursor: pointer;
+	}
+
+	.search-home .btn-advance {
+		color: #fff;
+	}
+
+	.me-2,
+	.favorite-list-item .img {
+		margin-right: 0.5rem !important;
+	}
+
+	[class^=icon-]::before,
+	[class^=icon-]::after,
+	[class*=' icon-']::before,
+	[class*=' icon-']::after {
+		display: inline-block;
+		font-family: "hsvn";
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		line-height: 1;
+		text-decoration: inherit;
+		text-rendering: optimizeLegibility;
+		text-transform: none;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		vertical-align: -0.12em;
+	}
+
+	.icon-setting::before {
+		content: "";
+	}
+
+	.search-home .search-advance.inactive {
+		height: 1px;
+		opacity: 0;
+	}
+
+	.col-3 {
+		flex: 0 0 auto;
+		width: 25%;
+	}
+
+	.dropdown-input {
+		position: relative;
+		width: 100%;
+		display: flex;
+	}
+
+	.dropdown-section {
+		position: relative;
+		cursor: pointer;
+		display: block;
+		min-width: 100%;
+		background-clip: padding-box;
+		line-height: 1.5;
+	}
+
+	.dropdown-selection-text {
+		width: 100%;
+		position: relative;
+		display: flex;
+	}
+
+	.search-home .dropdown-selection-text {
+		color: #fff;
+		min-width: 10rem;
+		align-items: center;
+		border-radius: .375rem;
+		padding: .375rem 2rem .375rem .75rem;
+		border: 1px solid transparent;
+	}
+
+	.search-home .dropdown-selection-text::after {
+		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3e%3cpath fill='none' stroke='%23dee2e6' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+		background-size: 1.125rem 1.125rem;
+		background-repeat: no-repeat;
+		height: 1rem;
+		position: absolute;
+		top: 50%;
+		width: 1rem;
+		transform: translateY(-50%);
+		content: "";
+		right: 0.5rem;
+		transition: transform .3s;
+	}
+
+	.search-home .search-row .dropdown-selection-text {
+		border-color: #dee2e6;
+	}
+
+	.icon-direction::before {
+		content: "";
+	}
+
+	.icon-juridical::before {
+		content: "";
+	}
+
+	.icon-address::before {
+		content: "";
+	}
+
+	.icon-project::before {
+		content: "";
+	}
+
+	.icon-area-square::before {
+		content: "";
+	}
+
+	.icon-price-circle::before {
+		content: "";
+	}
+
+	.icon-location::before {
+		content: "";
+	}
+
+	.icon-building::before {
+		content: "";
+	}
+
+	.search-home .dropdown-selection-text>i {
+		padding-right: 0.5rem;
+	}
+
+	.dropdown-selection-text span {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	.search-input {
+		position: relative;
+		z-index: 9;
+	}
+
+	.search .btn-search {
+		display: inline-block;
+		line-height: 1.5;
+		color: #fff;
+		text-align: center;
+		vertical-align: middle;
+		user-select: none;
+		background-color: #cfa267;
+		border: 1px solid #cfa267;
+		padding: .375rem 1rem;
+		font-size: 1rem;
+		border-radius: .375rem;
+		transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+		text-transform: uppercase;
+		white-space: nowrap;
+	}
+
+	.icon-search::before {
+		content: "";
+	}
+
+	.search-input-container {
+		position: relative;
+		height: 2.5rem;
+	}
+
+	.search-input-inner {
+		background: #fff;
+		border-radius: .375rem;
+		width: 100%;
+		z-index: 9;
+	}
+
+	.input-group {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: stretch;
+		width: 100%;
+	}
+
+	.search-home .search-input .dropdown-input {
+		width: 10rem;
+	}
+
+	.search-home .search-input .divider {
+		display: flex;
+		align-items: center;
+		line-height: 1.5;
+		color: #3f3424;
+		text-align: center;
+		white-space: nowrap;
+		background-color: transparent;
+		border-left: 1px solid #dee2e6;
+	}
+
+	:not(.has-validation).input-group> :not(:last-child):not(.dropdown-menu):not(.dropdown-toggle),
+	:not(.has-validation).input-group> :nth-last-child(n+3).dropdown-toggle {
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
+
+	.input-group>.form-control,
+	.input-group>.form-select {
+		position: relative;
+		flex: 1 1 auto;
+		width: 1%;
+		min-width: 0px;
+	}
+
+	.input-group> :not(:first-child):not(.invalid-feedback):not(.invalid-tooltip):not(.valid-feedback):not(.valid-tooltip):not(.dropdown-menu) {
+		margin-left: -1px;
+		border-top-left-radius: 0px;
+		border-bottom-left-radius: 0px;
+	}
+
+	.form-control {
+		display: block;
+		width: 100%;
+		padding: .375rem .75rem;
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 1.5;
+		color: #3f3424;
+		background-color: #fff;
+		background-clip: padding-box;
+		border: 1px solid #ced4da;
+		appearance: none;
+		border-radius: .25rem;
+		transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+	}
+
+	.search-input-control {
+		border-color: transparent !important;
+	}
+
+	.search-home .search-input .dropdown-selection-text {
+		color: #3f3424;
+	}
+
+	label {
+		display: inline-block;
+	}
+
+	.search-home .search-nav-type {
+		display: inline-flex;
+	}
+
+	.search-home .search-nav-type+.search-nav-type {
+		margin-left: 0.37rem;
+	}
+
+	.search-home .search-nav input[type=radio] {
+		position: absolute;
+		opacity: 0;
+		height: 0px;
+		width: 0px;
+	}
+
+	.text-center,
+	.expandable .block-description figure figcaption,
+	.expandable .expand-bar,
+	.home-investor .investor-control-next,
+	.home-investor .investor-control-prev,
+	.search-home .search-nav input[type=radio]+.nav-type-name,
+	.dropdown-selection-empty,
+	.dropdown-selection-group,
+	.empty-content,
+	.toc_title,
+	.section-title-center,
+	.favorite-empty,
+	.favorite-list-footer,
+	.dialog-footer,
+	.dialog {
+		text-align: center !important;
+	}
+
+	.text-uppercase,
+	.search-home .search-nav input[type=radio]+.nav-type-name,
+	.section-title,
+	.aside-title,
+	.favorite-list-item .title,
+	.favorite-list-header {
+		text-transform: uppercase !important;
+	}
+
+	.search-home .search-nav input[type=radio]+.nav-type-name {
+		cursor: pointer;
+		background-color: rgba(255, 255, 255, .6);
+		padding: .625rem 1rem;
+		border-radius: .375rem .375rem 0 0;
+	}
+
+	.search-home .search-nav input[type=radio]:checked+.nav-type-name {
+		background-color: rgba(0, 0, 0, .5);
+		color: #fff;
+
+	}
+
+	--- .mb-4 {
+		margin-bottom: 1.5rem !important;
+	}
+
+	.container,
+	.container-fluid,
+	.container-xxl {
+		width: 100%;
+		padding-right: var(--gutter-x, .75rem);
+		padding-left: var(--gutter-x, .75rem);
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	/* @media all and (min-width:1400px) */
+	.container-xxl,
+	.container-xl,
+	.container-lg,
+	.container {
+		max-width: 1320px;
+	}
+
+	.mt-2 {
+		margin-top: 0.5rem !important;
+	}
+
+	.fs-5,
+	.expandable .block-description h2,
+	.expandable .block-description .h2,
+	.dialog-title {
+		font-size: 1.25rem !important;
+	}
+
+	.text-center,
+	.expandable .block-description figure figcaption,
+	.expandable .expand-bar,
+	.home-investor .investor-control-next,
+	.home-investor .investor-control-prev,
+	.search-home .search-nav input[type=radio]+.nav-type-name,
+	.dropdown-selection-empty,
+	.dropdown-selection-group,
+	.empty-content,
+	.toc_title,
+	.section-title-center,
+	.favorite-empty,
+	.favorite-list-footer,
+	.dialog-footer,
+	.dialog {
+		text-align: center !important;
+	}
+
+	a {
+		color: #cfa267;
+		text-decoration: unset;
+	}
+
+	.link-primary {
+		color: #cfa267;
+	}
+
+	.border-primary {
+		border-color: #cfa267 !important;
+	}
+
+	.text-uppercase,
+	.search-home .search-nav input[type=radio]+.nav-type-name,
+	.section-title,
+	.aside-title,
+	.favorite-list-item .title,
+	.favorite-list-header {
+		text-transform: uppercase !important;
+	}
+
+	.mb-2,
+	.dropdown-selection-group {
+		margin-bottom: 0.5rem !important;
+	}
+
+	.pb-2 {
+		padding-bottom: 0.5rem !important;
+	}
+
+	.card-title {
+		margin-bottom: 0.5rem;
+	}
+
+	.fs-6,
+	.expandable .block-description h3,
+	.expandable .block-description .h3,
+	.toc_list {
+		font-size: 1rem !important;
+	}
+
+	.text-capitalize {
+		text-transform: capitalize !important;
+	}
+
+	.text-bold,
+	.dropdown-selection-empty-text>p,
+	.dropdown-selection-group,
+	.search .suggestions-list .suggestion-group,
+	.header,
+	.section-title,
+	.aside-link.active a,
+	.aside-title,
+	.favorite-list-item .title,
+	.dialog-button,
+	.dialog-body {
+		font-weight: 500;
+	}
+
+	.section-title {
+		position: relative;
+	}
+
+	.section-title-under::before {
+		border-bottom: 4px solid #cfa267;
+		position: absolute;
+		bottom: 0px;
+		width: 65px;
+		content: "";
+	}
+
+	.section-title-center::before {
+		left: 50%;
+		transform: translate(-50%);
+	}
+
+	.text-helper {
+		font-size: 0.87rem;
+	}
+
+	.home-project .text-helper {
+		width: 60%;
+		margin: 1rem auto;
+	}
+
+	.home-project-content {
+		position: relative;
+	}
+
+	.swiper-button-prev,
+	.swiper-button-next {
+		z-index: 10;
+		cursor: pointer;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.swiper-button-prev,
+	.swiper-container-rtl .swiper-button-next {
+		background-image: url("https://cdn.houseviet.vn/images/icons/left-arrow.png");
+	}
+
+	.home-project .swiper-button-prev {
+		left: -20px;
+	}
+
+	.home-project .swiper-button-next {
+		right: -20px;
+	}
+
+	.home-project .swiper-button-next,
+	.home-project .swiper-button-prev {
+		width: 40px;
+		height: 40px;
+		background-size: 12px 20px;
+		background-color: rgba(189, 189, 189, .8);
+		border-radius: 50%;
+		position: absolute;
+		top: 50%;
+	}
+
+	.swiper-button-next,
+	.swiper-container-rtl .swiper-button-prev {
+		background-image: url("https://cdn.houseviet.vn/images/icons/right-arrow.png");
+	}
+
+	.py-3 {
+		padding-top: 1rem !important;
+		padding-bottom: 1rem !important;
+	}
+
+	.swiper-container {
+		margin: 0 auto;
+		position: relative;
+		overflow: hidden;
+		list-style: none;
+		z-index: 1;
+	}
+
+	:not(.fluid).swiper-container {
+		width: calc(100% + 15px);
+		padding-left: 15px;
+		margin-left: -15px;
+	}
+
+	.swiper-wrapper {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-transition-property: -webkit-transform;
+		transition-property: transform;
+		-o-transition-property: transform;
+		transition-property: transform;
+		transition-property: transform, transform;
+		-webkit-box-sizing: content-box;
+		box-sizing: content-box;
+	}
+
+	.swiper-container-android .swiper-slide,
+	.swiper-wrapper {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0px, 0px, 0px);
+	}
+
+	.swiper-slide {
+		-webkit-flex-shrink: 0;
+		-ms-flex-negative: 0;
+		flex-shrink: 0;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		-webkit-transition-property: -webkit-transform;
+		transition-property: transform;
+		-o-transition-property: transform;
+		transition-property: transform;
+		transition-property: transform, transform;
+	}
+
+	.home-project .swiper-slide {
+		display: inline-flex;
+		flex-direction: column;
+		height: auto;
+		margin-right: 30px;
+		max-width: 30.3%;
+	}
+
+	.card {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		min-width: 0px;
+		word-wrap: break-word;
+		background-color: #fff;
+		background-clip: border-box;
+		border: 0 solid rgba(0, 0, 0, .125);
+		border-radius: .25rem;
+	}
+
+	.link-dark,
+	.box-user-login .options-menu li a {
+		color: #3f3424;
+	}
+
+	.shadow-sm,
+	.header.sticky .header-main,
+	blockquote,
+	.favorite-list {
+		box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.15) !important;
+	}
+
+	.card {
+		width: 100%;
+	}
+
+	.swiper-lazy-preloader {
+		width: 42px;
+		height: 42px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left: -21px;
+		margin-top: -21px;
+		z-index: 10;
+		transform-origin: 50%;
+		animation: swiper-preloader-spin 1s infinite linear;
+		box-sizing: border-box;
+		border: 3px solid #cfa267;
+		border-radius: 50%;
+		border-top-color: transparent;
+	}
+
+	.card-head {
+		position: relative;
+	}
+
+	.home-project .card-head {
+		height: 15rem;
+	}
+
+	/* @media all and (min-width:992px) */
+	.home-project .card-head {
+		height: 12rem;
+	}
+
+	/* @media all and (min-width:1200px) */
+	.home-project .card-head {
+		height: 12rem;
+	}
+
+	/* @media all and (min-width:1400px) */
+	.home-project .card-head {
+		height: 15rem;
+	}
+
+	.card-body {
+		flex: 1 1 auto;
+		padding: 1rem 1rem;
+	}
+
+	.card-body {
+		position: relative;
+	}
+
+	.home-project .card-body {
+		padding: .625rem .75rem;
+		position: relative;
+	}
+
+	.ribbon-top {
+		background-color: #ef5350;
+		top: -10px;
+		display: inline-block;
+		height: 40px;
+		text-align: center;
+		line-height: 40px;
+		color: #fff;
+		position: absolute;
+		padding: 0 10px;
+		z-index: 11;
+		border-bottom-left-radius: 4px;
+		border-bottom-right-radius: 4px;
+	}
+
+	.ribbon-top::after {
+		content: "";
+		position: absolute;
+		left: -10px;
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		border-width: 0 0 10px 10px;
+		border-color: transparent transparent #eb2521 transparent;
+		z-index: 10;
+	}
+
+	.card-title {
+		display: block;
+		line-height: 1.43;
+	}
+
+	.home-project .card-title {
+		margin-top: calc(1.325rem + .9vw);
+	}
+
+	/* @media all and (min-width:1200px) */
+	.home-project .card-title {
+		margin-top: 2rem;
+	}
+
+	.d-flex,
+	.search .suggestions-list .suggestion-item,
+	.favorite-list-item>a,
+	.favorite-list-header,
+	.favorite-list-item .content,
+	.dialog-footer,
+	.dialog-alert,
+	.dialog-confirm,
+	.check-list,
+	.check-inline,
+	.input-group-icon {
+		display: flex !important;
+	}
+
+	.mb-1,
+	.dropdown-selection-list .radio-inline {
+		margin-bottom: 0.25rem !important;
+	}
+
+	.fs-7,
+	.expandable .block-description figure figcaption,
+	.header {
+		font-size: 0.87rem !important;
+	}
+
+	.card i {
+		margin-right: 0.25rem;
+	}
+
+	[class^=icon-]::before,
+	[class^=icon-]::after,
+	[class*=' icon-']::before,
+	[class*=' icon-']::after {
+		display: inline-block;
+		font-family: "hsvn";
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		line-height: 1;
+		text-decoration: inherit;
+		text-rendering: optimizeLegibility;
+		text-transform: none;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		vertical-align: -0.12em;
+	}
+
+	.icon-juridical::before {
+		content: "";
+	}
+
+	.pe-2 {
+		padding-right: 0.5rem !important;
+	}
+
+	.icon-chart::before {
+		content: "";
+	}
+
+	.icon-address::before {
+		content: "";
+	}
+
+	.text-truncate,
+	.favorite-list-item .title {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.d-inline-block {
+		display: inline-block !important;
+	}
+
+	.w-99 {
+		width: 99% !important;
+	}
+
+	.home-project .sale-launch {
+		position: absolute;
+		top: 0.5rem;
+		left: 0.5rem;
+		z-index: 2;
+		padding: .125rem .375rem;
+		border-radius: 4px;
+		color: #fff;
+	}
+
+	.home-project .sale-launch.opening {
+		background: rgba(207, 162, 103, .8);
+	}
+
+	img,
+	svg {
+		vertical-align: middle;
+	}
+
+	.rounded-top {
+		border-top-left-radius: 0.25rem !important;
+		border-top-right-radius: 0.25rem !important;
+	}
+
+	.card-head-img {
+		height: 100%;
+		object-fit: cover;
+		width: 100%;
+	}
+
+	.home-project .card-head-img {
+		height: 100%;
+		object-fit: cover;
+		width: 100%;
+	}
+
+	.swiper-slide .swiper-lazy {
+		visibility: hidden;
+	}
+
+	.home-project .sale-launch.ongoing {
+		background: rgba(239, 83, 80, .8);
+	}
+
+	.py-4 {
+		padding-top: 1.5rem !important;
+		padding-bottom: 1.5rem !important;
+	}
+
+	/* @media all and (min-width:1400px) */
+	.container-xxl,
+	.container-xl,
+	.container-lg,
+	.container {
+		max-width: 1320px;
+	}
+
+	.mb-3,
+	.dialog-title {
+		margin-bottom: 1rem !important;
+	}
+
+	.pb-2 {
+		padding-bottom: 0.5rem !important;
+	}
+
+	.card-title {
+		margin-bottom: 0.5rem;
+	}
+
+	.fs-5,
+	.expandable .block-description h2,
+	.expandable .block-description .h2,
+	.dialog-title {
+		font-size: 1.25rem !important;
+	}
+
+	.mb-4 {
+		margin-bottom: 1.5rem !important;
+	}
+
+	a {
+		color: #cfa267;
+		text-decoration: unset;
+	}
+
+	.card {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		min-width: 0px;
+		word-wrap: break-word;
+		background-color: #fff;
+		background-clip: border-box;
+		border: 0 solid rgba(0, 0, 0, .125);
+		border-radius: .25rem;
+	}
+
+	.link-dark,
+	.box-user-login .options-menu li a {
+		color: #3f3424;
+	}
+
+	.mt-3,
+	.search-row,
+	.social-login.facebook {
+		margin-top: 1rem !important;
+	}
+
+	.text-center,
+	.expandable .block-description figure figcaption,
+	.expandable .expand-bar,
+	.home-investor .investor-control-next,
+	.home-investor .investor-control-prev,
+	.search-home .search-nav input[type=radio]+.nav-type-name,
+	.dropdown-selection-empty,
+	.dropdown-selection-group,
+	.empty-content,
+	.toc_title,
+	.section-title-center,
+	.favorite-empty,
+	.favorite-list-footer,
+	.dialog-footer,
+	.dialog {
+		text-align: center !important;
+	}
+
+	.py-2,
+	.header-main .link-create,
+	.social-login,
+	.favorite-list-header,
+	.favorite-list-footer,
+	.favorite-list-item {
+		padding-top: 0.5rem !important;
+		padding-bottom: 0.5rem !important;
+	}
+
+	.text-uppercase,
+	.search-home .search-nav input[type=radio]+.nav-type-name,
+	.section-title,
+	.aside-title,
+	.favorite-list-item .title,
+	.favorite-list-header {
+		text-transform: uppercase !important;
+	}
+
+	.text-dark-yellow,
+	.empty-content {
+		color: #b87926 !important;
+	}
+
+	p {
+		margin-top: 0px;
+		margin-bottom: 0.5rem;
+	}
+
+	.m-0 {
+		margin: 0 !important;
+	}
+
+	.fs-7,
+	.expandable .block-description figure figcaption,
+	.header {
+		font-size: 0.87rem !important;
+	}
+
+	.text-dark,
+	.aside-link a {
+		color: #3f3424 !important;
+	}
+
+	.text-bold,
+	.dropdown-selection-empty-text>p,
+	.dropdown-selection-group,
+	.search .suggestions-list .suggestion-group,
+	.header,
+	.section-title,
+	.aside-link.active a,
+	.aside-title,
+	.favorite-list-item .title,
+	.dialog-button,
+	.dialog-body {
+		font-weight: 500;
+	}
+
+	.section-title {
+		position: relative;
+	}
+
+	.section-title-under::before {
+		border-bottom: 4px solid #cfa267;
+		position: absolute;
+		bottom: 0px;
+		width: 65px;
+		content: "";
+	}
+
+	.section-title-center::before {
+		left: 50%;
+		transform: translate(-50%);
+	}
+
+	.text-helper {
+		font-size: 0.87rem;
+	}
+
+	.row,
+	.search-row {
+		--gutter-x: 1.5rem:;
+		--gutter-y: 0:;
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: calc(var(--gutter-y)*-1);
+		margin-right: calc(var(--gutter-x)*-.5);
+		margin-left: calc(var(--gutter-x)*-.5);
+	}
+
+	.btn-danger,
+	.header-main .link-create {
+		color: #fff;
+		background-color: #ef5350;
+		border-color: #ef5350;
+	}
+
+	.d-inline-block {
+		display: inline-block !important;
+	}
+
+	.px-3,
+	.header-main .link-create,
+	.social-login,
+	.favorite-list-item>a,
+	.favorite-list-header,
+	.box-user-login .options-menu li a,
+	.dialog-footer {
+		padding-right: 1rem !important;
+		padding-left: 1rem !important;
+	}
+
+	.text-white,
+	.header-main .link-create,
+	.box-user-info .display-name {
+		color: #fff !important;
+	}
+
+	.shadow-sm,
+	.header.sticky .header-main,
+	blockquote,
+	.favorite-list {
+		box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.15) !important;
+	}
+
+	.rounded,
+	.header-main .link-create,
+	.favorite-list-item .img,
+	.favorite-list,
+	.dialog-alert,
+	.dialog-confirm {
+		border-radius: .25rem !important;
+	}
+
+	.me-2,
+	.favorite-list-item .img {
+		margin-right: 0.5rem !important;
+	}
+
+	.row>*,
+	.search-row>* {
+		flex-shrink: 0;
+		width: 100%;
+		max-width: 100%;
+		padding-right: calc(var(--gutter-x)*.5);
+		padding-left: calc(var(--gutter-x)*.5);
+		margin-top: var(--gutter-y);
+	}
+
+	.col-9 {
+		flex: 0 0 auto;
+		width: 75%;
+	}
+
+	.col-3 {
+		flex: 0 0 auto;
+		width: 25%;
+	}
+
+	.card {
+		width: 100%;
+	}
+
+	.g-0,
+	.gx-0 {
+		--gutter-x: 0:;
+	}
+
+	.g-0,
+	.gy-0 {
+		--gutter-y: 0:;
+	}
+
+	.col-4 {
+		flex: 0 0 auto;
+		width: 33.33%;
+	}
+
+	.col-8 {
+		flex: 0 0 auto;
+		width: 66.66%;
+	}
+
+	.card-body {
+		flex: 1 1 auto;
+		padding: 1rem 1rem;
+	}
+
+	.p-2,
+	.dropdown-selection-empty {
+		padding: .5rem !important;
+	}
+
+	.card-body {
+		position: relative;
+	}
+
+	.card-title {
+		display: block;
+		line-height: 1.43;
+	}
+
+	.card-head {
+		position: relative;
+	}
+
+	.home-news .block-right .card-head {
+		height: 5rem;
+	}
+
+	img,
+	svg {
+		vertical-align: middle;
+	}
+
+	.rounded-start {
+		border-bottom-left-radius: 0.25rem !important;
+		border-top-left-radius: 0.25rem !important;
+	}
+
+	.rounded-top {
+		border-top-left-radius: 0.25rem !important;
+		border-top-right-radius: 0.25rem !important;
+	}
+
+	.card-head-img {
+		height: 100%;
+		object-fit: cover;
+		width: 100%;
+	}
+
+	img:not([src]).lazyload {
+		visibility: hidden;
+	}
+
+	.home-news .block-right .card-head img {
+		position: absolute;
+	}
+
+	.icon-law::before {
+		content: "";
+	}
+
+	.home-news .block-center .card-head {
+		height: 22rem;
+	}
+
+	:last-child.card-text {
+		margin-bottom: 0px;
+	}
+
+	.icon-time::before {
+		content: "";
+	}
+
+	.home-news .block-left .card-head {
+		height: 10rem;
+	}
+</style>

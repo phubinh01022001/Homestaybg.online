@@ -1,0 +1,233 @@
+<div id="body">
+	<div class="slide-container swiper">
+		<div class="slide-content">
+			<div class="card-wrapper swiper-wrapper">
+        <div class="tittle">
+          <p class="pl-1">Chủ đề khóa luận:</p>
+          <h2 style="text-align: center;">
+            <b>Xây dựng ứng dụng quản lý thông tin bất động sản trên nền tảng dịch vụ điện toán đám mây AWS.</b>
+          </h2><br><br>
+        </div>
+				<div class="card swiper-slide">
+					<div class="image-content">
+						<span class="overlay"></span>
+
+						<div class="card-image">
+							<img src="https://scontent.fsgn2-2.fna.fbcdn.net/v/t39.30808-6/310682435_1835703286777967_7634901536807965497_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=730e14&_nc_ohc=Ou-K4nLi2vMAX-X1Rum&_nc_ht=scontent.fsgn2-2.fna&oh=00_AfBWeQGX3Gt_YZROnVuOqnnraU5C79A_1vNQz-C00VoduA&oe=637FDFF0" alt="Cam Giang" class="card-img">
+						</div>
+					</div>
+
+					<div class="card-content">
+						<h2 class="name">Dương Thị Cẩm Giang</h2>
+						<p class="description">
+							<br>
+							MSSV: 19502311 <br>
+							Giới tính: Nữ <br>
+							Ngày sinh: 29/01/2001 <br>
+							Quê quán: Ba Tri, Bến Tre <br>
+							Học tại: Trường ĐẠI HỌC CÔNG NGHIỆP THÀNH PHỐ HỒ CHÍ MINH <br>
+						</p>
+
+						{{!-- <button class="button">View More</button> --}}
+					</div>
+				</div>
+				<div class="card swiper-slide">
+					<div class="image-content">
+						<span class="overlay"></span>
+
+						<div class="card-image">
+							<img src="https://scontent.fsgn2-1.fna.fbcdn.net/v/t39.30808-6/298682590_1643076286095753_2735113857968601488_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=174925&_nc_ohc=pkj-eP67KJMAX9gu_nL&_nc_ht=scontent.fsgn2-1.fna&oh=00_AfDkR32RW-Vsupl2483WVCNmyzRRvVPIz1kXHJgqf0vneg&oe=63835A6A" alt="Phu Binh" class="card-img">
+						</div>
+					</div>
+
+					<div class="card-content">
+						<h2 class="name">Nguyễn Phú Bình</h2>
+						<p class="description">
+							<br>
+							MSSV: 19437911 <br>
+							Giới tính: Nam <br>
+							Ngày sinh: 02/01/2001 <br>
+							Quê quán: Châu Thành, Bến Tre <br>
+							Học tại: Trường ĐẠI HỌC CÔNG NGHIỆP THÀNH PHỐ HỒ CHÍ MINH <br>
+						</p>
+						{{!-- <button class="button">View More</button> --}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+#body{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.slide-container{
+  max-width: 1120px;
+  width: 100%;
+  padding: 40px 0;
+}
+.slide-content{
+  margin: 0 40px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+.card{
+  border-radius: 25px;
+  background-color: #FFF;
+}
+.image-content,
+.card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 14px;
+}
+.image-content{
+  position: relative;
+  row-gap: 5px;
+  padding: 25px 0;
+}
+.overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #4070F4;
+  border-radius: 25px 25px 0 25px;
+}
+.overlay::before,
+.overlay::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #4070F4;
+}
+.overlay::after{
+  border-radius: 0 25px 0 0;
+  background-color: #FFF;
+}
+.card-image{
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: #FFF;
+  padding: 3px;
+}
+.card-image .card-img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #4070F4;
+}
+.name{
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+.description{
+  font-size: 14px;
+  color: #707070;
+  text-align: center;
+}
+.button{
+  border: none;
+  font-size: 16px;
+  color: #FFF;
+  padding: 8px 16px;
+  background-color: #4070F4;
+  border-radius: 6px;
+  margin: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button:hover{
+  background: #265DF2;
+}
+
+.swiper-navBtn{
+  color: #6E93f7;
+  transition: color 0.3s ease;
+}
+.swiper-navBtn:hover{
+  color: #4070F4;
+}
+.swiper-navBtn::before,
+.swiper-navBtn::after{
+  font-size: 35px;
+}
+.swiper-button-next{
+  right: 0;
+}
+.swiper-button-prev{
+  left: 0;
+}
+.swiper-pagination-bullet{
+  background-color: #6E93f7;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active{
+  background-color: #4070F4;
+}
+
+@media screen and (max-width: 768px) {
+  .slide-content{
+    margin: 0 10px;
+  }
+  .swiper-navBtn{
+    display: none;
+  }
+}
+
+</style>
+
+<script> 
+var swiper = new Swiper(".slide-content", {
+    slidesPerView: 3,
+    spaceBetween: 25,
+    loop: true,
+    centerSlide: 'true',
+    fade: 'true',
+    grabCursor: 'true',
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    breakpoints:{
+        0: {
+            slidesPerView: 1,
+        },
+        520: {
+            slidesPerView: 2,
+        },
+        950: {
+            slidesPerView: 3,
+        },
+    },
+  });
+
+</script>

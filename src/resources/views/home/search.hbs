@@ -1,0 +1,400 @@
+<div class="container">
+  <div class="mt-3 mb-4">
+    <div class="row">
+      <div class="col-9">
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-10">
+			{{!-- <img style="height: 500px; width: 800px; border-radius: 5px 5px 5px 5px;" src='https://cdn.houseviet.vn/images/post/{{home.dateID}}/{{home.imageID}}-840x535.jpg'/> --}}
+			<img style="height: 500px; width: 800px; border-radius: 5px 5px 5px 5px;" src='{{home.image}}'/>
+
+		  </div>
+          <div class="col-1"></div>
+        </div>
+        <div class="content mt-3">
+          <p class="pl-4 mb-4">
+            <p style="font-size:24px !important;">{{home.name}}</p>
+          </p>
+
+          <div class="row mt-4 mr-4 mf-3 pt-3 pb-3 pl-2" id="content" style="">
+            <div class="col-3">
+              <p>Mức giá:</p>
+              <b>{{home.price}}</b>
+              <span> / m2</span>
+            </div>
+            <div class="col-3">
+              <p>Diện tích:</p>
+              <b>{{home.area}}</b>
+              <span> m2</span>
+            </div>
+            <div class="col-6">
+              <p>Địa chỉ:</p>
+              <b>{{home.addDetail}}</b>
+            </div>
+          </div>
+  
+          <div class="m-2">
+            <h3>Thông tin mô tả</h3><br>
+            <p>{{home.description}}</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-3" style="">
+        <div class="m-2 mt-4" style="height: 400px;width:90%;background-color: rgb(238, 238, 229);border-radius: 20px 20px 20px 20px">
+            {{!-- <h4>Liên hệ</h4> --}}
+            <div class="row mt-2">
+              <div class="col-2"></div>
+              <div class="col-8 mt-2">
+                <img style="border-radius: 40px 40px 40px 40px;" src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/rockcms/2022-08/220805-border-collie-play-mn-1100-82d2f1.jpg">
+              </div>
+              <div class="col-2"></div>
+            </div>
+            <br>
+            <div style="text-align: center;">
+              <b>Mr.Dog</b><br>
+              <button class="mt-3 p-2 btn-success" style="border-radius: 10px 10px 10px 10px; width:200px">Gọi điện: 03741234xx</button>
+              <a href="https://www.facebook.com/messages/t/100010149407116"><button class="mt-3 p-2 btn-info" style="border-radius: 10px 10px 10px 10px; width:200px">Facebook</button></a>
+              <p class="mt-2 p-2">Địa chỉ: 123b, Trung Mỹ Tây, quận 12, Tp Hồ Chí Minh</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="re__main" itemprop="about">
+    <div class="re__ldp re__main-content-layout js__main-container">
+      <div class="re__main-sidebar">
+        <div class="re__pr-scrollbar js__pr-scrollbar">
+          <div class="re__pr-scrollbar-container js__pr-scrollbar-container">
+            <div class="re__pr-s-info js__pr-s-info">
+              <span class="re__pr-s-info-item">{{home.price}} /m²</span>
+              <span class="re__pr-s-info-item">{{home.area}} m²</span>
+              <span class="re__pr-s-info-address js__pr-address">
+				{{home.addDetail}}, {{home.add}}
+			  </span>
+            </div>
+            <div class="re__pr-s-contact js__pr-s-contact">
+              <img class="re__contact-avatar" style="border-radius: 40px 40px 40px 40px;"
+                  src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/rockcms/2022-08/220805-border-collie-play-mn-1100-82d2f1.jpg">
+              <div title="Thùy Dung" class="re__contact-name js_contact-name">
+                  Mr.Dog
+              </div>
+              <div class="re__zalo-fix">
+                  <a class="re__btn re__btn-se-border--md re__btn-icon-left--md"
+                      href="https://www.facebook.com/messages/t/100010149407116" target="_blank">
+					  <box-icon type='logo' name='messenger'></box-icon>
+					  <span>Chat qua Facebook</span>
+					</a>
+              </div>
+              <div class="re__btn re__btn-cyan-solid--md phone phoneEvent js__phone-event">
+                  Gọi điện: 03741234**
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+#content{
+  border-color: rgb(224, 221, 221); 
+  border-style: solid; 
+  border-width: 1px;
+  border-left:none; 
+  border-right:none
+}
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+.bg-site, body {
+    background-color: #f4f5f7;
+}
+a {
+    text-decoration: none;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+    padding: 0;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, input, select, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    font-family: "Roboto Regular" !important;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    border: none;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, input, select {
+    font-family: Roboto,Arial;
+    font-size: 14px;
+    margin: 0;
+    text-decoration: none;
+}
+a {
+    color: #000;
+}
+html {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.re__ldp .re__pr-scrollbar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 68px;
+    padding: 0px;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(182,182,182,0.18);
+    z-index: 8;
+}
+.re__body .re__main .re__main-content-layout .re__main-sidebar {
+    float: left;
+}
+/* @media only screen and (min-width:1545px) */
+.re__body .re__main .re__main-content-layout .re__main-sidebar {
+    width: 262px;
+}
+.re__body .re__main .re__main-content-layout .re__main-sidebar::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+.re__body .re__main .re__main-content-layout {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+}
+/* @media only screen and (min-width:1545px) */
+.re__body .re__main .re__main-content-layout {
+    width: 1140px;
+    margin-top: 24px;
+}
+.re__body .re__main .re__main-content-layout::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+body {
+    background: #fff;
+    line-height: 18px;
+    text-rendering: optimizeLegibility;
+}
+body {
+    line-height: 18px;
+}
+.re__body {
+    background: #fff;
+}
+/* @media only screen and (min-width:1140px) */
+.re__body {
+    min-width: 1140px !important;
+}
+:root {
+    --swiper-theme-color:#007aff: ;
+}
+:root {
+    --swiper-navigation-size:44px: ;
+}
+:root {
+    --swiper-theme-color:#007aff: ;
+}
+:root {
+    --swiper-navigation-size:44px: ;
+}
+.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container {
+    margin: 10px auto;
+}
+/* @media only screen and (min-width:1545px) */
+.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container {
+    max-width: 1140px;
+}
+.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-info {
+    float: left;
+}
+.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-info::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-contact {
+    float: right;
+}
+.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-contact::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+img, svg {
+    vertical-align: middle;
+}
+.re__ldp .re__zalo-fix {
+    margin-right: 8px;
+}
+.box-contact .user .phone, .re__sidebar-box .user .phone, .product-detail-fix .phone, .re__ldp .re__pr-scrollbar .phone {
+    line-height: 20px;
+    height: initial;
+    padding: 13px 15px;
+    border-radius: 8px;
+    color: #fff;
+    background: #009BA1;
+    border: 1px solid #009BA1;
+}
+.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-contact > * {
+    float: left;
+}
+.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-contact .re__contact-avatar {
+    font-family: "Lexend Medium" !important;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: normal !important;
+    letter-spacing: -0.2px;
+    color: #74150f;
+    background-color: #FFECEB;
+    text-align: center;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: inline-block;
+    margin-top: 8px;
+    text-transform: uppercase;
+}
+.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-contact .re__contact-name {
+    font-family: "Lexend Medium" !important;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: normal !important;
+    letter-spacing: -0.2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    color: #2c2c2c;
+    line-height: 48px;
+    margin-left: 8px;
+    margin-right: 16px;
+}
+.phoneEvent {
+    position: relative;
+}
+.re__btn {
+    font-style: normal;
+    outline: none;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: none !important;
+}
+.re__btn-cyan-solid--md {
+    color: #fff;
+    background: #009BA1;
+    border: 1px solid #009BA1;
+    font-family: "Lexend Medium" !important;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: normal !important;
+    letter-spacing: -0.2px;
+    padding: 13px 15px;
+    border-radius: 8px;
+}
+.re__btn-se-border--md {
+    color: #2c2c2c;
+    background: #fff;
+    border: solid 1px #ccc;
+    font-family: "Lexend Medium" !important;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: normal !important;
+    letter-spacing: -0.2px;
+    padding: 13px 15px;
+    border-radius: 8px;
+}
+.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-contact .re__btn {
+    margin-right: 8px;
+}
+.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-contact .phone {
+    position: relative;
+}
+.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-contact :last-of-type.re__btn {
+    margin-right: 0px;
+}
+[class^='re__icon-'], [class*=' re__icon-'] {
+    font-family: "font-icon-bds" !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 24px;
+    line-height: 1;
+}
+.re__icon-zalo-hover::before {
+    content: "\e9d2";
+    color: #0085ff;
+}
+.re__btn.re__btn-icon-left--md i {
+    margin-top: -2px;
+    margin-bottom: -2px;
+    font-size: 24px !important;
+    float: left;
+}
+.re__btn-se-border--md span {
+    font-family: "Lexend Medium" !important;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: normal !important;
+    letter-spacing: -0.2px;
+}
+.re__btn.re__btn-icon-left--md > span {
+    padding-left: 8px;
+    float: left;
+    font-family: "Lexend Medium" !important;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: normal !important;
+    letter-spacing: -0.2px;
+}
+.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-info .re__pr-s-info-item {
+    font-family: "Roboto Medium" !important;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: normal !important;
+    color: #2c2c2c;
+}
+.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-info :nth-of-type(n+2).re__pr-s-info-item::before {
+    content: "·";
+    margin: 0px 8px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #999;
+}
+.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-info .re__pr-s-info-address {
+    font-family: "Roboto Regular" !important;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: normal !important;
+    color: #999;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+</style>
+

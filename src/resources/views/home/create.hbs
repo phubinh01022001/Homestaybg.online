@@ -1,0 +1,64 @@
+<div class='mt-4 mb-3' style="padding-top: 60px;">
+  <div class="">
+    <h3 style="text-align: center;">Đăng bất động sản</h3>
+
+    <div class="">
+      <form method='POST' action='/homes/store'>
+        <div class='mb-3'>
+          <label for='name' class='form-label'>Tên bất động sản</label>
+          <input type='text' class='form-control' id='name' name='name' />
+        </div>
+        <div class='mb-3'>
+          <label class='form-label'>Loại </label>
+          <select for="type" class="form-control" name="type" id="type">
+            <option selected value="Chung cư">Căn hộ chung cư</option>
+            <option value="Nhà riêng">Nhà riêng mặt phố</option>
+            <option value="Biệt thự">Biệt thự. nhà liền kề</option>                                                        
+          </select>
+        </div>
+        <div class='mb-3'>
+          <label for='area' class='form-label'>Diện tích (m2)</label>
+          <input type='number' class='form-control' id='area' name='area' />
+        </div>
+        <div class='mb-3'>
+          <label class='form-label'>Tỉnh thành </label>
+          <select for="add" class="form-control" name="add" id="add">
+            <option selected value="Hồ Chí Minh">Hồ Chí Minh</option>
+            <option value="Hà Nội">Hà Nội</option>
+            <option value="Bến Tre">Bến Tre</option>
+          </select>
+        </div>
+        <div class='mb-3'>
+          <label for='addDetail' class='form-label'>Địa chỉ cụ thể</label>
+          <input type='text' class='form-control' id='addDetail' name='addDetail'  placeholder="Địa chỉ cụ thể" />
+          </textarea>
+        </div>
+        <div class='mb-3'>
+          <label for='description' class='form-label'>Mô tả</label>
+          <textarea class='form-control' id='description' name='description' placeholder="Mô tả bất động sản">
+          </textarea>
+        </div>
+        <div class='mb-3'>
+          <label for='image' class='form-label'>Link ảnh</label>
+          <input type='text' class='form-control' id='image' name='image' />
+        </div>
+        {{!-- <div class='mb-3'>
+          <label for='imageID' class='form-label'>ID ảnh (https://houseviet.vn/)</label>
+          <input type='text' class='form-control' id='imageID' name='imageID' />
+        </div>
+        <div class='mb-3'>
+          <label for='dateID' class='form-label'>ID ngày (https://houseviet.vn/)</label>
+          <input type='text' class='form-control' id='dateID' name='dateID' />
+        </div> --}}
+        <div class='mb-3'>
+          <label for='price' class='form-label'>Giá (/m2)</label>
+          <input type='text' class='form-control' id='price' name='price' />
+        </div>
+
+        <button type='submit' class='btn btn-primary'>Submit</button>
+      </form>
+    </div>
+    
+    
+  </div> 
+</div>

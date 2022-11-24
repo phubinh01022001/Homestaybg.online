@@ -1,0 +1,97 @@
+<div class="mt-4" style="padding-top: 60px;">
+    <div>
+      <a href="/me/stored/homes">
+        <box-icon name='arrow-back'></box-icon>
+      </a>
+      <h3>Tin đăng đã xóa</h3>
+    </div>
+    <table class="table mt-4">
+        <thead> 
+            <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Tên bất động sản</th>
+                <th scope="col">Loại </th>
+                <th scope="col">Mô tả</th>
+                <th scope="col">Giá</th>
+                <th scope="col">Thời gian xóa</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each homes}}
+            <tr>
+                <th scope="row">{{sum @index 1}}</th>
+                <td>{{this.name}}</td>
+                <td>{{this.type}}</td>
+                <td>{{this.description}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this.deletedAt}}</td>
+                <td>
+                  <a href="" class="btn btn-success btn-restore" data-id="{{this._id}}">Khôi phục</a> 
+                </td>
+                <td>
+                  <button class="btn btn-danger" data-toggle="modal" data-id="{{this._id}}" data-target="#delete-homes">Xóa vĩnh viễn</button>
+                </td>
+            </tr>
+            {{else}}
+            <tr>
+              <td colspan="5" class="text-center">
+                Trùng rác trống
+              </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+{{!-- Confirm delete --}}
+<div class="modal fade" id="delete-homes" tabindex="-1" aria-labelledby="delete-homes-label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><h4><b>Xóa tin này?</b></span></h4>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Hành động này không thể khôi phục! Bạn chắc chắn chứ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+        <button id="btn-delete" type="button" class="btn btn-danger">Xóa VĨNH VIỄN?</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form name="delete-form" method="post"></form>
+<form name="restore-form" method="post"></form>
+
+<script>
+    var homeId;
+    var deleteForm = document.forms['delete-form'];
+    var restoreForm = document.forms['delete-form'];
+    var btnDelete = document.getElementById('btn-delete');
+    var btnRestore = $('.btn-restore');
+
+    // when dialog confirm clicked
+    $('#delete-homes').on('show.bs.modal', function(event){
+        var button = $(event.relatedTarget);
+        homeId = button.data('id');
+    });
+
+    btnDelete.onclick = function () {
+        deleteForm.action = '/homes/' + homeId + '/force?_method=delete';
+        deleteForm.submit();
+    };
+
+    // Restore btn clicked
+    btnRestore.click(function(e){
+      e.preventDefault();
+
+      var homeId = $(this).data('id');
+      restoreForm.action = '/homes/' + homeId + '/restore?_method=patch';
+      restoreForm.submit();
+    })
+
+</script>
