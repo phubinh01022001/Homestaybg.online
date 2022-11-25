@@ -10,10 +10,11 @@ router.put('/:id', homeController.update);
 router.delete('/:id', homeController.delete);
 router.delete('/:id/force', homeController.force);
 router.patch('/:id/restore', homeController.restore);
+router.get('/showFull', homeController.showFull);
 router.get('/showChungCu', homeController.showChungCu);
 router.get('/showNhaRieng', homeController.showNhaRieng);
 router.get('/showBietThu', homeController.showBietThu);
-router.get('/:txtName/search', homeController.search);
+router.post('/search', homeController.search);
 router.get('/:slug', homeController.show);
 
 module.exports = router;

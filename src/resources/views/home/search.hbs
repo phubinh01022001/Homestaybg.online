@@ -1,400 +1,516 @@
-<div class="container">
-  <div class="mt-3 mb-4">
-    <div class="row">
-      <div class="col-9">
-        <div class="row">
-          <div class="col-1"></div>
-          <div class="col-10">
-			{{!-- <img style="height: 500px; width: 800px; border-radius: 5px 5px 5px 5px;" src='https://cdn.houseviet.vn/images/post/{{home.dateID}}/{{home.imageID}}-840x535.jpg'/> --}}
-			<img style="height: 500px; width: 800px; border-radius: 5px 5px 5px 5px;" src='{{home.image}}'/>
+<div class='mt-4' style="padding-top: 50px;">
+    {{!-- <section class="banner banner-home mb-4" id="timkiem">
+        <form class="search search-home" action="/homes/search" method="post">
+            <div class="search-nav">
+                <label class="search-nav-type">
+                    <input name="Type" aria-label="Search type" type="radio" checked="" value="1">
+                    <span class="nav-type-name">Tìm kiếm nhà đất</span>
+                </label>
+            </div>
+            <div class="search-container">
+                <div class="row g-2">
+                    <div class="col-1">
 
-		  </div>
-          <div class="col-1"></div>
-        </div>
-        <div class="content mt-3">
-          <p class="pl-4 mb-4">
-            <p style="font-size:24px !important;">{{home.name}}</p>
-          </p>
-
-          <div class="row mt-4 mr-4 mf-3 pt-3 pb-3 pl-2" id="content" style="">
-            <div class="col-3">
-              <p>Mức giá:</p>
-              <b>{{home.price}}</b>
-              <span> / m2</span>
+                    </div>
+                    <div class="col-8 search-input">
+                        <div class="search-input-container">
+                            <div class="search-input-inner">
+                                <div class="input-group">
+                                    <input class="form-control search-input-control" name="txtName" placeholder="Nhập tên bất động sản..." autocomplete="off">
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-1">
+                        <button id="btnSearch" class="btn-search" type="submit" style="height: 43px;">
+                            <box-icon name='search-alt-2' animation='tada'></box-icon>
+                            <span>Tìm kiếm </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="search-row g-2">
+                    <div class="col-10">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="dropdown-input">
+                                    <div class="dropdown-section" id="City" data-control="search">
+                                        <select for="add" id="add" name="add" class="form-control">
+                                            <option selected value="all-city">
+                                                <span style="margin: auto;">Toàn quốc</span>
+                                            </option>
+                                            <option value="Bến Tre">Bến Tre</option>
+                                            <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+                                            <option value="Hà Nội">Hà Nội</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="dropdown-input">
+                                    <div class="dropdown-section" id="Price" data-control="search">
+                                        <select class="form-control">
+                                            <option selected value="all-price">
+                                                <span style="margin: auto;">Mức giá (/m2)</span>
+                                            </option>
+                                            <option value="under-100">Dưới 100 000 000vnđ</option>
+                                            <option value="under-300">Dưới 300 000 000vnđ</option>
+                                            <option value="under-1000">Dưới 1 000 000 000vnđ</option>
+                                            <option value="above-1000">Trên 1 000 000 000vnđ</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="dropdown-input">
+                                    <div class="dropdown-section" id="Area" data-control="search">
+                                        <select class="form-control">
+                                            <option selected value="all-area">
+                                                <span style="margin: auto;">Diện tích (m2)</span>
+                                            </option>
+                                            <option value="dt100">Dưới 100m2</option>
+                                            <option value="dt300">Dưới 300m2</option>
+                                            <option value="dt300plus">Trên 300m2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="dropdown-input">
+                                    <select class="form-control">
+                                        <option selected>
+                                            <span style="margin: auto;">Lọc thêm</span>
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-3">
-              <p>Diện tích:</p>
-              <b>{{home.area}}</b>
-              <span> m2</span>
-            </div>
-            <div class="col-6">
-              <p>Địa chỉ:</p>
-              <b>{{home.addDetail}}</b>
-            </div>
-          </div>
-  
-          <div class="m-2">
-            <h3>Thông tin mô tả</h3><br>
-            <p>{{home.description}}</p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="col-3" style="">
-        <div class="m-2 mt-4" style="height: 400px;width:90%;background-color: rgb(238, 238, 229);border-radius: 20px 20px 20px 20px">
-            {{!-- <h4>Liên hệ</h4> --}}
-            <div class="row mt-2">
-              <div class="col-2"></div>
-              <div class="col-8 mt-2">
-                <img style="border-radius: 40px 40px 40px 40px;" src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/rockcms/2022-08/220805-border-collie-play-mn-1100-82d2f1.jpg">
-              </div>
-              <div class="col-2"></div>
-            </div>
-            <br>
-            <div style="text-align: center;">
-              <b>Mr.Dog</b><br>
-              <button class="mt-3 p-2 btn-success" style="border-radius: 10px 10px 10px 10px; width:200px">Gọi điện: 03741234xx</button>
-              <a href="https://www.facebook.com/messages/t/100010149407116"><button class="mt-3 p-2 btn-info" style="border-radius: 10px 10px 10px 10px; width:200px">Facebook</button></a>
-              <p class="mt-2 p-2">Địa chỉ: 123b, Trung Mỹ Tây, quận 12, Tp Hồ Chí Minh</p>
-            </div>
-        </div>
-      </div>
+        </form>
+    </section> --}}
+    <div id="">
+        <h3>Kết quả tìm kiếm: </h3>
     </div>
-  </div>
-
-  <div class="re__main" itemprop="about">
-    <div class="re__ldp re__main-content-layout js__main-container">
-      <div class="re__main-sidebar">
-        <div class="re__pr-scrollbar js__pr-scrollbar">
-          <div class="re__pr-scrollbar-container js__pr-scrollbar-container">
-            <div class="re__pr-s-info js__pr-s-info">
-              <span class="re__pr-s-info-item">{{home.price}} /m²</span>
-              <span class="re__pr-s-info-item">{{home.area}} m²</span>
-              <span class="re__pr-s-info-address js__pr-address">
-				{{home.addDetail}}, {{home.add}}
-			  </span>
+    <div class='row mt-3' >
+    {{#each home}}
+        <div class='col-sm-6 col-lg-4' style="height: 600px;">
+        <div class='card card-couser-item'>
+            <a href='/homes/{{this.slug}}' style="height: 180px;">
+            <img src='{{this.image}}' class='card-img-top' style="height: 100%;" alt='{{this.image}}'/>
+            </a>
+            <div class='card-body' style="height: 400px;">
+            <a href='/homes/{{this.slug}}'>
+                <h5 class='card-text' style="height: 70px;" >{{this.name}}</h5>
+            </a>
+            <p class='card-text' style="height: 20px;"><b>Diện tích: </b>{{this.area}} m2</p>
+            <p class='card-text' style="height: 20px;"><b>Giá:</b> {{this.price}} /m2</p>
+            <p class='card-text'>{{this.description}}</p>
             </div>
-            <div class="re__pr-s-contact js__pr-s-contact">
-              <img class="re__contact-avatar" style="border-radius: 40px 40px 40px 40px;"
-                  src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/rockcms/2022-08/220805-border-collie-play-mn-1100-82d2f1.jpg">
-              <div title="Thùy Dung" class="re__contact-name js_contact-name">
-                  Mr.Dog
-              </div>
-              <div class="re__zalo-fix">
-                  <a class="re__btn re__btn-se-border--md re__btn-icon-left--md"
-                      href="https://www.facebook.com/messages/t/100010149407116" target="_blank">
-					  <box-icon type='logo' name='messenger'></box-icon>
-					  <span>Chat qua Facebook</span>
-					</a>
-              </div>
-              <div class="re__btn re__btn-cyan-solid--md phone phoneEvent js__phone-event">
-                  Gọi điện: 03741234**
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
+        </div>
+    {{/each}}
+
     </div>
-  </div>
 </div>
 
 <style>
-#content{
-  border-color: rgb(224, 221, 221); 
-  border-style: solid; 
-  border-width: 1px;
-  border-left:none; 
-  border-right:none
-}
-* {
-    -webkit-tap-highlight-color: transparent;
-}
-.bg-site, body {
-    background-color: #f4f5f7;
-}
-a {
-    text-decoration: none;
-}
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
-    padding: 0;
-}
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, input, select, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-    font-family: "Roboto Regular" !important;
-    font-size: 14px;
-    line-height: 20px;
-    margin: 0;
-    padding: 0;
-    vertical-align: baseline;
-    border: none;
+#timkiem{
+    margin-top: -80px !important;
+    height: 250px !important;
 }
 *, *::before, *::after {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, input, select {
-    font-family: Roboto,Arial;
-    font-size: 14px;
-    margin: 0;
-    text-decoration: none;
+.search-home {
+	left: 50%;
+	top: 0px;
+	transform: translate(-50%, 0px);
+	position: absolute;
+	z-index: 9;
+	width: 61.25rem;
+	padding-top: 2rem;
 }
-a {
-    color: #000;
+/* @media all and (min-width:1600px) */
+.search-home {
+	padding-top: 2rem;
 }
-html {
-    margin: 0;
-    padding: 0;
-    border: 0;
+/* @media all and (max-width:1600px) and (min-width:1400px) */
+.search-home {
+	padding-top: 2rem;
 }
-.re__ldp .re__pr-scrollbar {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 68px;
-    padding: 0px;
-    background-color: #fff;
-    box-shadow: 0px 4px 10px rgba(182,182,182,0.18);
-    z-index: 8;
+.position-relative, .dropdown-selection-item, .dropdown-selection-group, .banner {
+	position: relative !important;
 }
-.re__body .re__main .re__main-content-layout .re__main-sidebar {
-    float: left;
+.mb-4 {
+	margin-bottom: 1.5rem !important;
 }
-/* @media only screen and (min-width:1545px) */
-.re__body .re__main .re__main-content-layout .re__main-sidebar {
-    width: 262px;
+.banner {
+	width: 100%;
 }
-.re__body .re__main .re__main-content-layout .re__main-sidebar::after {
-    content: "";
-    clear: both;
-    display: block;
+/* @media all and (max-width:1870px) and (min-width:1600px) */
+.banner {
+	height: 32rem;
 }
-.re__body .re__main .re__main-content-layout {
-    position: relative;
-    margin-right: auto;
-    margin-left: auto;
+/* @media all and (max-width:1600px) and (min-width:1400px) */
+.banner {
+	height: 29rem;
 }
-/* @media only screen and (min-width:1545px) */
-.re__body .re__main .re__main-content-layout {
-    width: 1140px;
-    margin-top: 24px;
+.overflow-hidden, .header-main .navbar a, .card-head, .main-content {
+	overflow: hidden !important;
 }
-.re__body .re__main .re__main-content-layout::after {
-    content: "";
-    clear: both;
-    display: block;
+.main-content {
+	min-height: 30rem;
 }
 body {
-    background: #fff;
-    line-height: 18px;
-    text-rendering: optimizeLegibility;
-}
-body {
-    line-height: 18px;
-}
-.re__body {
-    background: #fff;
-}
-/* @media only screen and (min-width:1140px) */
-.re__body {
-    min-width: 1140px !important;
+	margin: 0;
+	font-family: var(--font-sans-serif);
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #3f3424;
+	background-color: #f4f2f0;
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 :root {
-    --swiper-theme-color:#007aff: ;
+	--blue:#0d6efd: ;
+	--indigo:#6610f2: ;
+	--purple:#6f42c1: ;
+	--pink:#d63384: ;
+	--red:#ef5350: ;
+	--orange:#fd7e14: ;
+	--yellow:#ffb800: ;
+	--green:#33a837: ;
+	--teal:#20c997: ;
+	--cyan:#0dcaf0: ;
+	--white:#fff: ;
+	--gray:#6c757d: ;
+	--gray-dark:#343a40: ;
+	--primary:#cfa267: ;
+	--secondary:#6c757d: ;
+	--success:#33a837: ;
+	--info:#0dcaf0: ;
+	--warning:#ffb800: ;
+	--danger:#ef5350: ;
+	--light:#f8f9fa: ;
+	--dark:#3f3424: ;
+	--dark-yellow:#b87926: ;
+	--font-sans-serif:"Asap",sans-serif: ;
+	--gradient:linear-gradient(180deg,rgba(255,255,255,.15),rgba(255,255,255,0)): ;
 }
-:root {
-    --swiper-navigation-size:44px: ;
+.search-home .search-nav {
+	display: flex;
+	flex-direction: row;
 }
-:root {
-    --swiper-theme-color:#007aff: ;
+.p-3, .search-home .search-container, .dialog-body {
+	padding: 1rem !important;
 }
-:root {
-    --swiper-navigation-size:44px: ;
+.search-home .search-container {
+	min-height: 6rem;
+	background-color: rgba(0,0,0,.5);
+	border-top-right-radius: 0.37rem;
+	border-bottom-right-radius: 0.37rem;
+	border-bottom-left-radius: 0.37rem;
 }
-.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container {
-    margin: 10px auto;
+.row, .search-row {
+	--gutter-x:1.5rem: ;
+	--gutter-y:0: ;
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: calc(var(--gutter-y)*-1);
+	margin-right: calc(var(--gutter-x)*-.5);
+	margin-left: calc(var(--gutter-x)*-.5);
 }
-/* @media only screen and (min-width:1545px) */
-.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container {
-    max-width: 1140px;
+.g-2, .gx-2 {
+	--gutter-x:.5rem: ;
 }
-.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container::after {
-    content: "";
-    clear: both;
-    display: block;
+.g-2, .gy-2 {
+	--gutter-y:.5rem: ;
 }
-.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-info {
-    float: left;
+.mt-3, .search-row, .social-login.facebook {
+	margin-top: 1rem !important;
 }
-.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-info::after {
-    content: "";
-    clear: both;
-    display: block;
+.row > *, .search-row > * {
+	flex-shrink: 0;
+	width: 100%;
+	max-width: 100%;
+	padding-right: calc(var(--gutter-x)*.5);
+	padding-left: calc(var(--gutter-x)*.5);
+	margin-top: var(--gutter-y);
 }
-.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-contact {
-    float: right;
+.col-10 {
+	flex: 0 0 auto;
+	width: 83.33%;
 }
-.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-contact::after {
-    content: "";
-    clear: both;
-    display: block;
+.col-2 {
+	flex: 0 0 auto;
+	width: 16.66%;
 }
-img, svg {
-    vertical-align: middle;
+button {
+	border-radius: 0;
 }
-.re__ldp .re__zalo-fix {
-    margin-right: 8px;
+input, button, select, optgroup, textarea {
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
 }
-.box-contact .user .phone, .re__sidebar-box .user .phone, .product-detail-fix .phone, .re__ldp .re__pr-scrollbar .phone {
-    line-height: 20px;
-    height: initial;
-    padding: 13px 15px;
-    border-radius: 8px;
-    color: #fff;
-    background: #009BA1;
-    border: 1px solid #009BA1;
+button, select {
+	text-transform: none;
 }
-.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-contact > * {
-    float: left;
+button, [type=button], [type=reset], [type=submit] {
+	-webkit-appearance: button;
 }
-.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-contact .re__contact-avatar {
-    font-family: "Lexend Medium" !important;
-    font-size: 18px;
-    line-height: 28px;
-    font-weight: normal !important;
-    letter-spacing: -0.2px;
-    color: #74150f;
-    background-color: #FFECEB;
-    text-align: center;
-    width: 32px;
-    height: 32px;
-    line-height: 32px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: inline-block;
-    margin-top: 8px;
-    text-transform: uppercase;
+.btn, .dialog-button {
+	display: inline-block;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #3f3424;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: pointer;
+	user-select: none;
+	background-color: transparent;
+	border: 1px solid transparent;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	border-radius: .25rem;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
-.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-contact .re__contact-name {
-    font-family: "Lexend Medium" !important;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: normal !important;
-    letter-spacing: -0.2px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: center;
-    color: #2c2c2c;
-    line-height: 48px;
-    margin-left: 8px;
-    margin-right: 16px;
+.text-end {
+	text-align: right !important;
 }
-.phoneEvent {
-    position: relative;
+.w-100, .dropdown-selection-group, .header-main, .dialog-button, .dialog {
+	width: 100% !important;
 }
-.re__btn {
-    font-style: normal;
-    outline: none;
-    display: inline-block;
-    text-align: center;
-    cursor: pointer;
-    box-shadow: none !important;
+button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
+	cursor: pointer;
 }
-.re__btn-cyan-solid--md {
-    color: #fff;
-    background: #009BA1;
-    border: 1px solid #009BA1;
-    font-family: "Lexend Medium" !important;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: normal !important;
-    letter-spacing: -0.2px;
-    padding: 13px 15px;
-    border-radius: 8px;
+.search-home .btn-advance {
+	color: #fff;
 }
-.re__btn-se-border--md {
-    color: #2c2c2c;
-    background: #fff;
-    border: solid 1px #ccc;
-    font-family: "Lexend Medium" !important;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: normal !important;
-    letter-spacing: -0.2px;
-    padding: 13px 15px;
-    border-radius: 8px;
+.me-2, .favorite-list-item .img {
+	margin-right: 0.5rem !important;
 }
-.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-contact .re__btn {
-    margin-right: 8px;
+[class^=icon-]::before, [class^=icon-]::after, [class*=' icon-']::before, [class*=' icon-']::after {
+	display: inline-block;
+	font-family: "hsvn";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	line-height: 1;
+	text-decoration: inherit;
+	text-rendering: optimizeLegibility;
+	text-transform: none;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	vertical-align: -0.12em;
 }
-.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-contact .phone {
-    position: relative;
+.icon-setting::before {
+	content: "";
 }
-.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-contact :last-of-type.re__btn {
-    margin-right: 0px;
+.search-home .search-advance.inactive {
+	height: 1px;
+	opacity: 0;
 }
-[class^='re__icon-'], [class*=' re__icon-'] {
-    font-family: "font-icon-bds" !important;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 24px;
-    line-height: 1;
+.col-3 {
+	flex: 0 0 auto;
+	width: 25%;
 }
-.re__icon-zalo-hover::before {
-    content: "\e9d2";
-    color: #0085ff;
+.dropdown-input {
+	position: relative;
+	width: 100%;
+	display: flex;
 }
-.re__btn.re__btn-icon-left--md i {
-    margin-top: -2px;
-    margin-bottom: -2px;
-    font-size: 24px !important;
-    float: left;
+.dropdown-section {
+	position: relative;
+	cursor: pointer;
+	display: block;
+	min-width: 100%;
+	background-clip: padding-box;
+	line-height: 1.5;
 }
-.re__btn-se-border--md span {
-    font-family: "Lexend Medium" !important;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: normal !important;
-    letter-spacing: -0.2px;
+.dropdown-selection-text {
+	width: 100%;
+	position: relative;
+	display: flex;
 }
-.re__btn.re__btn-icon-left--md > span {
-    padding-left: 8px;
-    float: left;
-    font-family: "Lexend Medium" !important;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: normal !important;
-    letter-spacing: -0.2px;
+.search-home .dropdown-selection-text {
+	color: #fff;
+	min-width: 10rem;
+	align-items: center;
+	border-radius: .375rem;
+	padding: .375rem 2rem .375rem .75rem;
+	border: 1px solid transparent;
 }
-.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-info .re__pr-s-info-item {
-    font-family: "Roboto Medium" !important;
-    font-size: 18px;
-    line-height: 28px;
-    font-weight: normal !important;
-    color: #2c2c2c;
+.search-home .dropdown-selection-text::after {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3e%3cpath fill='none' stroke='%23dee2e6' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+	background-size: 1.125rem 1.125rem;
+	background-repeat: no-repeat;
+	height: 1rem;
+	position: absolute;
+	top: 50%;
+	width: 1rem;
+	transform: translateY(-50%);
+	content: "";
+	right: 0.5rem;
+	transition: transform .3s;
 }
-.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-info :nth-of-type(n+2).re__pr-s-info-item::before {
-    content: "·";
-    margin: 0px 8px;
-    font-size: 16px;
-    line-height: 24px;
-    color: #999;
+.search-home .search-row .dropdown-selection-text {
+	border-color: #dee2e6;
 }
-.re__ldp .re__pr-scrollbar .re__pr-scrollbar-container .re__pr-s-info .re__pr-s-info-address {
-    font-family: "Roboto Regular" !important;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: normal !important;
-    color: #999;
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
+.icon-direction::before {
+	content: "";
+}
+.icon-juridical::before {
+	content: "";
+}
+.icon-address::before {
+	content: "";
+}
+.icon-project::before {
+	content: "";
+}
+.icon-area-square::before {
+	content: "";
+}
+.icon-price-circle::before {
+	content: "";
+}
+.icon-location::before {
+	content: "";
+}
+.icon-building::before {
+	content: "";
+}
+.search-home .dropdown-selection-text > i {
+	padding-right: 0.5rem;
+}
+.dropdown-selection-text span {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.search-input {
+	position: relative;
+	z-index: 9;
+}
+.search .btn-search {
+	display: inline-block;
+	line-height: 1.5;
+	color: #fff;
+	text-align: center;
+	vertical-align: middle;
+	user-select: none;
+	background-color: #cfa267;
+	border: 1px solid #cfa267;
+	padding: .375rem 1rem;
+	font-size: 1rem;
+	border-radius: .375rem;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+.icon-search::before {
+	content: "";
+}
+.search-input-container {
+	position: relative;
+	height: 2.5rem;
+}
+.search-input-inner {
+	background: #fff;
+	border-radius: .375rem;
+	width: 100%;
+	z-index: 9;
+}
+.input-group {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	width: 100%;
+}
+.search-home .search-input .dropdown-input {
+	width: 10rem;
+}
+.search-home .search-input .divider {
+	display: flex;
+	align-items: center;
+	line-height: 1.5;
+	color: #3f3424;
+	text-align: center;
+	white-space: nowrap;
+	background-color: transparent;
+	border-left: 1px solid #dee2e6;
+}
+:not(.has-validation).input-group > :not(:last-child):not(.dropdown-menu):not(.dropdown-toggle), :not(.has-validation).input-group > :nth-last-child(n+3).dropdown-toggle {
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+.input-group > .form-control, .input-group > .form-select {
+	position: relative;
+	flex: 1 1 auto;
+	width: 1%;
+	min-width: 0px;
+}
+.input-group > :not(:first-child):not(.invalid-feedback):not(.invalid-tooltip):not(.valid-feedback):not(.valid-tooltip):not(.dropdown-menu) {
+	margin-left: -1px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+.form-control {
+	display: block;
+	width: 100%;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #3f3424;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	appearance: none;
+	border-radius: .25rem;
+	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.search-input-control {
+	border-color: transparent !important;
+}
+.search-home .search-input .dropdown-selection-text {
+	color: #3f3424;
+}
+label {
+	display: inline-block;
+}
+.search-home .search-nav-type {
+	display: inline-flex;
+}
+.search-home .search-nav-type + .search-nav-type {
+	margin-left: 0.37rem;
+}
+.search-home .search-nav input[type=radio] {
+	position: absolute;
+	opacity: 0;
+	height: 0px;
+	width: 0px;
+}
+.text-center, .expandable .block-description figure figcaption, .expandable .expand-bar, .home-investor .investor-control-next, .home-investor .investor-control-prev, .search-home .search-nav input[type=radio] + .nav-type-name, .dropdown-selection-empty, .dropdown-selection-group, .empty-content, .toc_title, .section-title-center, .favorite-empty, .favorite-list-footer, .dialog-footer, .dialog {
+	text-align: center !important;
+}
+.text-uppercase, .search-home .search-nav input[type=radio] + .nav-type-name, .section-title, .aside-title, .favorite-list-item .title, .favorite-list-header {
+	text-transform: uppercase !important;
+}
+.search-home .search-nav input[type=radio] + .nav-type-name {
+	cursor: pointer;
+	background-color: rgba(255,255,255,.6);
+	padding: .625rem 1rem;
+	border-radius: .375rem .375rem 0 0;
+}
+.search-home .search-nav input[type=radio]:checked + .nav-type-name {
+	background-color: rgba(0,0,0,.5);
+	color: #fff;
 }
 </style>
-

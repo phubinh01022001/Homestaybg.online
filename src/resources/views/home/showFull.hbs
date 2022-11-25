@@ -1,0 +1,23 @@
+<div class='mt-4' style="padding-top: 50px;">
+  <div class='row mt-3' >
+    {{#each home}}
+      <div class='col-sm-6 col-lg-4' style="height: 600px;">
+        <div class='card card-couser-item'>
+          <a href='/homes/{{this.slug}}' style="height: 180px;">
+            <img src='{{this.image}}' class='card-img-top' style="height: 100%;" alt='{{this.image}}'/>
+          </a>
+          <div class='card-body' style="height: 400px;">
+            <a href='/homes/{{this.slug}}'>
+              <h5 class='card-text' style="height: 70px;" >{{this.name}}</h5>
+            </a>
+            <p class='card-text' style="height: 20px;"><b>Diện tích: </b>{{this.area}} m2</p>
+            <p class='card-text' style="height: 20px;"><b>Giá:</b> {{this.price}} /m2</p>
+            <p class='card-text'>{{this.description}}</p>
+            {{!-- <a href='/homes/{{this.slug}}' class='btn btn-primary'>Xem</a> --}}
+          </div>
+        </div>
+      </div>
+    {{/each}}
+
+  </div>
+</div>

@@ -9,13 +9,29 @@ class HomeController {
     res.render('home/create');
   }
 
-  search(req, res, next) {
-    Home.findOne({ name: req.params.txtName })
-      .then((home) =>
+  // search(req, res, next) {
+  //   var name = req.body.name;
+
+  //   Home.findOne({ name: txtName })
+  //     .then((home) =>
+  //       res.render('home/search', { 
+  //         home: mongooseToObject(home), 
+  //       }),
+  //     )
+  //     .catch(next);
+  // }
+  search(req, res, next){
+    var name = req.body.name;
+    var add = req.body.add;
+    var price = req.body.price;
+    var area = req.body.area;
+
+    Home.find({add: add} || {name : name })
+      .then(home =>{
         res.render('home/search', { 
-          home: mongooseToObject(home), 
-        }),
-      )
+          home: mutipleMongooseToObject(home), 
+        })
+      })
       .catch(next);
   }
 
@@ -28,6 +44,15 @@ class HomeController {
       .save()
       .then(() => res.redirect('/me/stored/homes'))
       .catch((error) => {});
+  }
+  showFull(req, res, next) { 
+    Home.find({})
+      .then((home) =>
+        res.render('home/showFull', { 
+          home: mutipleMongooseToObject(home), 
+        }),
+      )
+      .catch(next);
   }
 
   // [GET] /homes/showNam

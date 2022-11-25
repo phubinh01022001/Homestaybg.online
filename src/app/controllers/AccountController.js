@@ -31,18 +31,16 @@ class AccountController {
     User.findOne({ username: username, passwork: passwork})
       .then(user => {
         if(user){
-          // res.render('home', { 
-          //   user: mongooseToObject(user)
-          // })
           res.render('account/profile', {
             user: mongooseToObject(user)
           })
         }else{
-          return res.json('Không tồn tại user này!!')
+          alert("Thông tin đăng nhập sai! Vui lòng nhập lại");
+          return res.redirect('back');
         }
       })
       .catch(err => {
-        res.status(500).json('Lỗi hệ thống!!!');
+        res.redirect('back');
       });
   }
 
