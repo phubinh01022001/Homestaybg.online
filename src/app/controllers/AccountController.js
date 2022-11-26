@@ -20,7 +20,7 @@ class AccountController {
   
   // [GET] /account/login
   login(req, res, next) { 
-    res.render('account/login');
+    res.render('account/login', {layout: false});
   }
 
   // [POST] /account/login_res
@@ -46,6 +46,10 @@ class AccountController {
 
   profile(req, res, next) { 
     res.render('account/profile');
+  }
+
+  forgot(req, res, next) { 
+    res.render('account/forgot', {layout: false});
   }
 
 }

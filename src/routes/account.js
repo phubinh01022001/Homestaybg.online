@@ -9,5 +9,6 @@ router.get('/login', AccountController.login);
 router.post('/login', AccountController.login);
 router.post('/login_tc', AccountController.login_tc);
 router.get('/profile', AccountController.profile);
+router.get('/forgot', AccountController.forgot);
 
 module.exports = router;
