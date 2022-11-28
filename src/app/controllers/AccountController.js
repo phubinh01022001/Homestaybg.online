@@ -6,7 +6,7 @@ const { rawListeners } = require('../models/User');
 class AccountController {
   // [GET] /account/resgister
   resgister(req, res, next) { 
-    res.render('account/resgister');
+    res.render('account/resgister', {layout: false});
   }
 
   // [POST] /account/store_res
@@ -14,7 +14,7 @@ class AccountController {
     const user = new User(req.body);
     user
       .save()
-      .then(() => res.redirect('resgister') )
+      .then(() => res.redirect('/') )
       .catch((error) => {});
   }
   
@@ -36,7 +36,7 @@ class AccountController {
           })
         }else{
           alert("Thông tin đăng nhập sai! Vui lòng nhập lại");
-          return res.redirect('back');
+          return res.json('thông tin đăng nhập sai!!');
         }
       })
       .catch(err => {
@@ -46,6 +46,10 @@ class AccountController {
 
   profile(req, res, next) { 
     res.render('account/profile');
+  }
+
+  home(req, res, next) { 
+    res.render('home');
   }
 
   forgot(req, res, next) { 
