@@ -3,7 +3,7 @@
     <h3 style="text-align: center;">Đăng bất động sản</h3>
 
     <div class="">
-      <form method='POST' action='/homes/store'>
+      <form method='POST' action='/homes/images' enctype="multipart/form-data">
         <div class='mb-3'>
           <label for='name' class='form-label'>Tên bất động sản</label>
           <input type='text' class='form-control' id='name' name='name' />
@@ -39,17 +39,9 @@
           </textarea>
         </div>
         <div class='mb-3'>
-          <label for='image' class='form-label'>Link ảnh</label>
-          <input type='text' class='form-control' id='image' name='image' />
+          <label for='image' class='form-label'>Ảnh</label><br>
+          <input type='file' name='image' accept="image/*">
         </div>
-        {{!-- <div class='mb-3'>
-          <label for='imageID' class='form-label'>ID ảnh (https://houseviet.vn/)</label>
-          <input type='text' class='form-control' id='imageID' name='imageID' />
-        </div>
-        <div class='mb-3'>
-          <label for='dateID' class='form-label'>ID ngày (https://houseviet.vn/)</label>
-          <input type='text' class='form-control' id='dateID' name='dateID' />
-        </div> --}}
         <div class='mb-3'>
           <label for='price' class='form-label'>Giá (/m2)</label>
           <input type='text' class='form-control' id='price' name='price' />
@@ -57,8 +49,10 @@
 
         <button type='submit' class='btn btn-primary'>Submit</button>
       </form>
+      
+      {{!-- <img src='/homes/images/5c36ab5c03f01c6e183a95113ccdfd17'> --}}
+      
     </div>
-    
     
   </div> 
 </div>

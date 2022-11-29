@@ -4,22 +4,13 @@ const { mongooseToObject } = require('../../util/mongoose');
 const { mutipleMongooseToObject } = require('../../util/mongoose');
 
 class HomeController {
+  //POST
+  
   // [GET] /homes/create
   create(req, res, next) {
     res.render('home/create');
   }
 
-  // search(req, res, next) {
-  //   var name = req.body.name;
-
-  //   Home.findOne({ name: txtName })
-  //     .then((home) =>
-  //       res.render('home/search', { 
-  //         home: mongooseToObject(home), 
-  //       }),
-  //     )
-  //     .catch(next);
-  // }
   search(req, res, next){
     var name = req.body.name;
     var add = req.body.add;
@@ -34,11 +25,8 @@ class HomeController {
       })
       .catch(next);
   }
-
   // [POST] /homes/store
-  store(req, res, next) {
-    // req.body.image = `https://cdn.houseviet.vn/images/post/${req.body.dateID}/${req.body.imageID}-840x535.jpg`;
-    
+  store(req, res, next) {    
     const homes = new Home(req.body);
     homes
       .save()
