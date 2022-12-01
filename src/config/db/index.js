@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const sessionSecret = "mysitesessionsecret";
 
 async function connect() {
   try {
@@ -9,4 +10,4 @@ async function connect() {
   }
 }
 
-module.exports = { connect };
+module.exports = { connect, sessionSecret };

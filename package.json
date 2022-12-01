@@ -13,9 +13,11 @@
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.1262.0",
+    "body-parser": "^1.20.1",
     "dotenv": "^16.0.3",
     "express": "^4.17.3",
     "express-handlebars": "^6.0.4",
+    "express-session": "^1.17.3",
     "method-override": "^3.0.0",
     "mongoose": "^6.2.10",
     "mongoose-delete": "^0.5.4",

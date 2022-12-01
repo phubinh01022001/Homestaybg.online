@@ -5,7 +5,10 @@ const Home = require('../app/models/Home')
 // S3
 const multer  = require('multer');
 const upload = multer({ dest: 'uploads/' });
-const { uploadFile, getFileStream } = require('./s3')
+const { uploadFile, getFileStream } = require('./s3');
+const { ResourceExplorer2 } = require('aws-sdk');
+
+const auth = require('../middleware/adminAuth');
 
 router.get('/images/:key',( req , res )=>{
     const key = req.params.key
@@ -27,16 +30,7 @@ router.post('/images', upload.single('image'),async (req, res, next) => {
         .save()
         .then(() => res.redirect('/me/stored/homes'))
         .catch((error) => {});
-    
-    // res.send({imagePath: `/images/${result.Key}`})
   });
-//   store(req, res, next) {    
-//     const homes = new Home(req.body);
-//     homes
-//       .save()
-//       .then(() => res.redirect('/me/stored/homes'))
-//       .catch((error) => {});
-//   }
 
 router.get('/create', homeController.create);
 router.post('/store', homeController.store);
@@ -51,5 +45,7 @@ router.get('/showNhaRieng', homeController.showNhaRieng);
 router.get('/showBietThu', homeController.showBietThu);
 router.post('/search', homeController.search);
 router.get('/:slug', homeController.show);
+
+// router.get('*', homeController.show);
 
 module.exports = router;

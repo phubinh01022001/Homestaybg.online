@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  {{!-- Boostrap 4 --}}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  {{!-- Icon https://boxicons.com/ --}}
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</head>
+<body>
+  <header class="re__full-menu re__header re__hover-menu re__tablet-menu  js__menu-bar">
+    <div class="re__menu-bar re__pushmenu re__pushmenu-right floating--right">                            
+      <div class="re__control-menu">
+        <div id="Header_UserControl_divPostProduct">
+          <a href="/logout">
+        <button class="re__btn-se-border--md " style="background-color: rgb(27, 25, 24);color:rgb(230, 247, 0)">
+            Đăng xuất
+        </button>
+          </a>
+        </div>
+    </div>
+      <div class="re__drop-menu">
+        <div class="row re__left-menu">
+          <h1>
+            <a href="/home_user">
+              <img style="" title="Homestaybg" src="https://scontent.fsgn2-1.fna.fbcdn.net/v/t1.15752-9/315445344_663833802019157_5693318441254098458_n.png?_nc_cat=105&ccb=1-7&_nc_sid=ae9488&_nc_ohc=3av0AHLge1YAX81-Nzf&_nc_ht=scontent.fsgn2-1.fna&oh=03_AdS5YxbwY7k8rmDF_pHlNcFd7--mT44_v0Y4d9qBEZJcXA&oe=63A1B3AE">
+            </a>
+          </h1>
+        </div>
+        <div class="re__right-menu">
+          <div class="re__home-header-menu">
+            <ul class="re__dropdown-no-art--sm re__dropdown-navigative-menu">
+              <li class="lv0 ">
+                <a class="haslink" href="/homesUser/showChungCu_user">
+                  <span class="text">Chung cư</span>
+                </a>
+              </li>
+              <li class="lv0 ">
+                <a class="haslink" href="/homesUser/showNhaRieng_user">
+                  <span class="text">Nhà riêng</span>
+                </a>
+              </li>
+              <li class="lv0 ">
+                <a class="haslink" href="/homesUser/showBietThu_user">
+                  <span class="text">Biệt thự</span>
+                </a>
+              </li>
+              <li class="lv0 ">
+                <a class="haslink" href="/news_user">
+                  <span class="text">Tin tức</span>
+                  <span class="text-new-content text-new-content-top">N</span>
+                </a>
+              </li>
+              <li class="lv0 ">
+                <a class="haslink" href="/introduce_user">
+                  <span class="icon">
+                  </span>
+                  <span class="text">Giới thiệu</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="clear">&nbsp;</div>
+      </div>
+    </div>
+  </header>
+  <div class='mt-4' style="padding-top: 50px;">
+    <div class="bk" style="height: 500px; width: 1295px; padding-left: 170px">
+      <img src="https://neohouse.vn/wp-content/uploads/2020/03/biet-thu-dep-3-tang-hien-dai-bia.jpg" style="height: 100%;width: 100%;border-radius:50px 50px 50px 50px;">
+    </div>
+
+    <div class='row mt-4'>
+
+      {{#each home}}
+        <div class='col-sm-6 col-lg-4'>
+          <div class='card card-couser-item'>
+            <a href='/homesUser/{{this.slug}}' style="height: 300px;">
+              <img src='/homesUser/images/{{this.image}}' class='card-img-top'  style="height: 100%;" alt='{{this.image}}'/>
+            </a>
+            <div class='card-body'  style="height: 480px;">
+              <a href='/homesUser/{{this.slug}}'>
+                <h5 class='card-text'>{{this.name}}</h5>
+              </a>
+              <p class='card-text'><b>Diện tích: </b>{{this.area}} m2</p>
+              <p class='card-text'>{{this.description}}</p>
+              <p class='card-text'><b>Giá:</b> {{this.price}} vnđ</p>
+              {{!-- <a href='/homes/{{this.slug}}' class='btn btn-primary'>Xem</a> --}}
+            </div>
+          </div>
+        </div>
+      {{/each}}
+
+    </div>
+  </div>
+  <footer class="footer py-4 col-12" id="footer" >
+    <div class="container">
+      <div class="d-flex justify-content-between">
+        <div class="footer-block footer-company">
+                <div class="company-name mt-3 text-uppercase fs-6 text-bold">
+                        <box-icon name='home-heart' ></box-icon>
+                        WEBSITE THƯƠNG MẠI BẤT ĐỘNG SẢN HOMESTAYBG.ONLINE
+                </div>
+                <div class="company-phone mt-2">
+                        <box-icon name='phone' animation='tada' ></box-icon>
+                        </i>HOTLINE: 0374123411/0
+                </div>
+                <div class="company-email mt-2">
+                        <box-icon type='logo' name='gmail'></box-icon>
+                        </i>phubinh0001@gmail.com / gianggiang29290101@gmail.com
+                </div>
+                <div class="company-address mt-2">
+                        <box-icon type='solid' name='briefcase-alt-2'></box-icon>
+                        </i>Đại học Công nghiệp Thành phố Hồ Chí Minh 4
+                </div>
+        </div>
+        <div class="footer-block">
+      <div class="text-uppercase text-bold fs-6 mb-3">
+        <b>Quy định</b>
+      </div>
+      <nav class="navbar">
+        <ul class="navbar-nav text-uppercase fs-7">
+          <li>
+          <a title="Hướng dẫn tạo in" style="color: black;" class="d-block py-1" href="/cauHoi_user">
+              Câu hỏi thường gặp
+          </a>
+          <li>
+          <a class="d-block py-1" style="color: black;" href="https://mail.google.com/mail/u/0/?pli=1#inbox?compose=GTvVlcRzCMcpNVKKStjjrRkpGgGmGBjTCXHHtglnfVXJmXGtXbRshKTwBfxXXmPRxNpxwfwSKgRpr">
+              Liên hệ
+          </a>
+          <li>
+          <a title="Sitemap" style="color: black;" class="d-block py-1" href="https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+C%C3%B4ng+nghi%E1%BB%87p+TP.HCM/@10.8224989,106.6880843,15z/data=!4m5!3m4!1s0x3174deb3ef536f31:0x8b7bb8b7c956157b!8m2!3d10.8221589!4d106.6868454">
+              Sitemap
+          </a>
+          <li>
+          <a title="Chính sách bảo mật thông tin" style="color: black;" class="d-block py-1" href="#">
+              Chính sách bảo mật thông tin
+          </a>
+          <li>
+          <a title="Quy chế hoạt động" style="color: black;" class="d-block py-1" href="#">
+              Thông báo
+          </a>
+        </ul>
+      </nav>
+        </div>
+        <div class="footer-block">
+          <div class="text-uppercase  text-bold fs-6 mb-3">
+            <b>Hỗ trợ khách hàng</b>
+          </div>
+          <ul class="list-unstyled">
+            <li class="py-1">
+            <box-icon name='phone-incoming' type='solid' animation='burst' ></box-icon>
+            </i>Tổng đài CSKH: 1800 XXXX
+
+            <li class="py-1">
+            <box-icon name='envelope' animation='tada' ></box-icon>
+            </i>phubinh0001@gmail.com
+
+            <li class="py-1">
+            <box-icon name='shield' animation='spin' ></box-icon>
+            </i>Hỗ trợ kỹ thuật: 0789 xxx xxx
+          </ul>
+          <div class="footer-social d-flex justify-content-between align-items-center">
+            <a href="https://www.facebook.com/yumi.giaqq" >
+                    <box-icon style="color: white;" type='logo' name='facebook-square'></box-icon>
+            </a>
+            <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJNqLdNfPkBmcSGSdLDCWWpHjVczDCMpqPQHsQGhQKcqBKnMFkTzVCmcGQcXkwMpStmpqtg" >
+                    <box-icon name='gmail' type='logo' ></box-icon>
+            </a>
+            <a href="https://twitter.com/Phubinh10" >
+                    <box-icon type='logo' name='twitter'></box-icon>
+            </a>
+            <a href="https://www.youtube.com/@nguyenphubinh1320/featured" >
+                    <box-icon type='logo' name='youtube'></box-icon>
+            </a>
+                  
+          </div>
+          <div class="footer-regitered mt-3">
+                  
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright text-center fs-8 mt-3">
+        <div class="copyright-text">All content © copyright Homestaybg.online. All rights reserved</div>
+        <p>
+          <a title="DMCA.com Protection Status" class="dmca-badge" href="/"> <img width="100" height="20" alt="DMCA.com Protection Status" src="https://images.dmca.com/Badges/dmca-badge-w100-5x1-10.png?ID=86a822a3-2466-4e71-abef-6a2339123236">
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
+<style>
+* {
+        font-size: large !important;
+        -webkit-tap-highlight-color: transparent;
+}
+html {
+        margin: 0;
+        padding: 0;
+        border: 0;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, input, select, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+        font-family: "Roboto Regular" !important;
+        font-size: 14px;
+        line-height: 20px;
+        margin: 0;
+        padding: 0;
+        vertical-align: baseline;
+        border: none;
+}
+*, *::before, *::after {
+        box-sizing: border-box;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, input, select {
+        font-family: Roboto,Arial;
+        font-size: 14px;
+        margin: 0;
+        text-decoration: none;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+        padding: 0;
+}
+a {
+        color: #000;
+}
+a {
+        text-decoration: none;
+}
+.bg-site, body {
+        background-color: #f4f5f7;
+}
+.re__bg-header {
+        background: #fff;
+        width: 100%;
+        height: 96px;
+        margin: 0px;
+        padding: 0px;
+}
+body {
+        background: #fff;
+        line-height: 18px;
+        text-rendering: optimizeLegibility;
+}
+body {
+        line-height: 18px;
+}
+.re__body {
+        background: #fff;
+}
+/* @media only screen and (min-width:1140px) */
+.re__body {
+        min-width: 1140px !important;
+}
+.re__full-menu {
+        background: #fff;
+        width: 100%;
+        height: 96px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 999;
+        padding: 17px 15px 17px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-shadow: 0px 4px 10px rgba(182,182,182,0.18);
+}
+ul li {
+        list-style-type: none;
+}
+.homemain, .top-search, .tablet, .zompchat, .livechatwidget {
+        display: none !important;
+}
+ul.re__dropdown-no-art--sm li {
+        font-family: "Roboto Regular" !important;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: normal !important;
+        padding: 6px 16px;
+        position: relative;
+        cursor: pointer;
+        color: #2c2c2c;
+}
+.re__container-sm, li.lv0.tablet {
+        display: none !important;
+}
+.re__full-menu .re__control-menu {
+        float: right;
+        padding-right: 16px;
+        color: #2c2c2c;
+        height: 96px;
+        display: table;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        z-index: 9999999;
+}
+.re__full-menu .re__drop-menu .re__left-menu {
+        float: left;
+}
+.re__full-menu .re__drop-menu .re__right-menu {
+        float: left;
+}
+.clear {
+        clear: both;
+        height: 0px;
+}
+ol, ul {
+        padding-left: 0px;
+}
+ol, ul, dl {
+        margin-top: 0px;
+        margin-bottom: 0px;
+}
+ol ol, ul ul, ol ul, ul ol {
+        margin-bottom: 0px;
+}
+ul.re__dropdown-no-art--sm {
+        border-radius: 8px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        box-shadow: 0px 8px 20px rgba(182,182,182,0.3);
+        background: #fff;
+}
+.re__full-menu .re__drop-menu .re__right-menu .re__dropdown-navigative-menu.re__dropdown-no-art--sm {
+        display: table-row;
+        float: left;
+        position: relative;
+        z-index: 2147483647;
+        box-shadow: none;
+        border-radius: 0;
+        padding-left: 0px;
+}
+.re__full-menu .re__drop-menu .re__right-menu .re__dropdown-navigative-menu.re__dropdown-no-art--sm li.lv0 {
+        float: left;
+        padding: 12px 0px 8px;
+        margin-left: 24px;
+        display: inline-grid;
+        list-style: none;
+        vertical-align: middle;
+        position: relative;
+        float: left;
+}
+.re__full-menu .re__drop-menu .re__right-menu .re__dropdown-navigative-menu.re__dropdown-no-art--sm li.lv0.re__btn-menu {
+        display: none;
+}
+.re__btn {
+        font-style: normal;
+        outline: none;
+        display: inline-block;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: none !important;
+}
+.re__btn-se-border--md {
+        color: #2c2c2c;
+        background: #fff;
+        border: solid 1px #ccc;
+        font-family: "Lexend Medium" !important;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: normal !important;
+        letter-spacing: -0.2px;
+        padding: 13px 15px;
+        border-radius: 8px;
+}
+.re__btn-pr-solid--md {
+        color: #fff;
+        background: #E03C31;
+        border: solid 1px #E03C31;
+        font-family: "Lexend Medium" !important;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: normal !important;
+        letter-spacing: -0.2px;
+        padding: 13px 15px;
+        border-radius: 8px;
+}
+.re__btn-se-ghost--md {
+        color: #2c2c2c;
+        background: rgba(0,0,0,0);
+        border: solid 1px rgba(0, 0, 0, 0);
+        font-family: "Lexend Medium" !important;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: normal !important;
+        letter-spacing: -0.2px;
+        padding: 13px 15px;
+        border-radius: 8px;
+}
+.re__btn.re__btn-icon--md {
+        line-height: 1px !important;
+}
+ul.re__dropdown-no-art--sm li ul {
+        position: absolute;
+        top: 0px;
+        left: 100%;
+        display: none;
+}
+.re__hover-menu .re__right-menu .re__dropdown-navigative-menu.re__dropdown-no-art--sm .lv0 ul {
+        display: none;
+}
+.re__full-menu .re__drop-menu .re__right-menu .re__dropdown-navigative-menu.re__dropdown-no-art--sm li.lv0 ul {
+        top: 100%;
+        left: 0px;
+        display: none;
+        min-width: 240px;
+        padding: 8px 0px !important;
+        z-index: 99999;
+}
+[class^='re__icon-'], [class*=' re__icon-'] {
+        font-family: "font-icon-bds" !important;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 24px;
+        line-height: 1;
+}
+.re__icon-browse::before {
+        content: "\e922";
+        color: #999;
+}
+.re__icon-heart::before {
+        content: "\e963";
+}
+.re__btn.re__btn-icon--md i {
+        margin-top: -2px;
+        margin-bottom: -2px;
+        margin-right: -4px;
+        margin-left: -4px;
+        font-size: 24px !important;
+        display: block;
+}
+ul.re__dropdown-no-art--sm li a {
+        display: block;
+}
+.re__hover-menu .re__right-menu .re__dropdown-navigative-menu.re__dropdown-no-art--sm li a {
+        color: #2c2c2c;
+}
+.re__full-menu .re__drop-menu .re__right-menu .re__dropdown-navigative-menu.re__dropdown-no-art--sm li.lv0 a {
+        padding: 0px;
+}
+.re__full-menu .re__drop-menu .re__right-menu .re__dropdown-navigative-menu.re__dropdown-no-art--sm li.lv0 ul li {
+        width: 100%;
+        float: left;
+        padding: 0px;
+        list-style: none;
+}
+.re__hover-menu .re__right-menu .re__dropdown-navigative-menu.re__dropdown-no-art--sm .lv0 ul li.lv1 a {
+        background: rgba(0,0,0,0);
+        color: #2c2c2c;
+}
+.re__full-menu .re__drop-menu .re__right-menu .re__dropdown-navigative-menu.re__dropdown-no-art--sm li.lv0 ul li a {
+        padding: 6px 16px;
+        white-space: nowrap;
+        margin: 0;
+        font-family: "Roboto Regular" !important;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: normal !important;
+}
+.re__hover-menu .re__right-menu .re__dropdown-navigative-menu.re__dropdown-no-art--sm .lv0 ul li.lv1 ul {
+        display: none;
+        margin-left: 0px;
+        top: -8px;
+        left: 240px !important;
+}
+.re__hover-menu .re__right-menu .re__dropdown-navigative-menu.re__dropdown-no-art--sm li a span {
+        color: #2c2c2c;
+}
+.re__full-menu .re__drop-menu .re__right-menu .re__dropdown-navigative-menu.re__dropdown-no-art--sm li.lv0 a span.icon {
+        display: none;
+}
+.re__full-menu .re__drop-menu .re__right-menu .re__dropdown-navigative-menu.re__dropdown-no-art--sm li.lv0 a .text {
+        font-family: "Lexend Medium" !important;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: normal !important;
+        letter-spacing: -0.2px;
+}
+img, svg {
+        vertical-align: middle;
+}
+a img {
+        border: none;
+}
+img.lazyload {
+        content: url(/images/common/lazyload-preview.svg);
+        object-fit: cover;
+}
+img.lazyload {
+        content: url(/images/common/lazyload-preview.svg);
+        object-fit: cover;
+}
+.re__full-menu .re__drop-menu .re__right-menu .re__dropdown-navigative-menu.re__dropdown-no-art--sm li.lv0 .lv2 ul {
+        width: 140px;
+}
+.re__full-menu .re__drop-menu .re__right-menu .re__dropdown-navigative-menu.re__dropdown-no-art--sm li.lv0 a span.text-new-content {
+        font-weight: bold !important;
+        font-style: normal;
+        font-size: 10px;
+        line-height: 8px;
+        text-align: center;
+        letter-spacing: 0.3px;
+        color: #ffffff;
+        background-color: #e03c31;
+        padding: 2px 4px 2px 4px;
+        margin-left: 4px;
+        margin-right: 0px;
+        margin-bottom: 3px !important;
+        width: 28px;
+        height: 16px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2px;
+        top: -2px;
+        position: relative;
+}
+.re__full-menu .re__drop-menu .re__right-menu .re__dropdown-navigative-menu.re__dropdown-no-art--sm li.lv0 a span.text-new-content-top {
+        position: absolute !important;
+        top: -7px !important;
+        right: 0px;
+        padding: 4px 4px 4px 4px !important;
+        width: 25px;
+}
+.visual-hidden {
+        border: 0 none;
+        height: 1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+}
+.re__full-menu .re__drop-menu .re__left-menu img {
+        height: 48px;
+        margin-top: 8px;
+}
+[aria-label][role~='tooltip'] {
+        position: relative;
+}
+.re__footer {
+        background: #f2f2f2;
+}
+.re__full-menu .re__control-menu div {
+        display: table-cell;
+        vertical-align: middle;
+}
+#divUserStt a {
+        cursor: pointer;
+}
+#divUserStt .re__btn {
+        float: left;
+}
+.re__full-menu .re__control-menu #divUserStt .re__line {
+        border: 0;
+        float: left;
+        width: 1px;
+        height: 16px;
+        background: #e5e5e5;
+        margin: 15px 0;
+}
+#divUserStt :last-child.re__btn {
+        margin-right: 8px;
+}
+[aria-label][role~='tooltip']::after {
+        font-family: "Roboto Regular" !important;
+        font-size: 12px !important;
+        line-height: 16px !important;
+        font-weight: normal !important;
+        color: #fff;
+        background: rgba(0,0,0,0.8) !important;
+        padding: 8px 12px !important;
+}
+[role~='tooltip'][data-microtip-position='bottom']::before {
+        background: url(/images/tooltip/tooltip-bottom.svg) no-repeat;
+        width: 12px;
+        height: 8px;
+}
+[aria-label][role~='tooltip']::before, [aria-label][role~='tooltip']::after {
+        transform: translate3d(0px, 0px, 0px);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        will-change: transform;
+        opacity: 0;
+        pointer-events: none;
+        transition: all var(--microtip-transition-duration,.18s) var(--microtip-transition-easing,ease-in-out) var(--microtip-transition-delay,0s);
+        position: absolute;
+        box-sizing: border-box;
+        z-index: 10;
+        transform-origin: top;
+}
+[aria-label][role~='tooltip']::before {
+        background-size: 100% auto !important;
+        content: "";
+}
+[aria-label][role~='tooltip']::after {
+        background: rgba(17,17,17,.9);
+        border-radius: 4px;
+        color: #fff;
+        content: attr(aria-label);
+        font-size: var(--microtip-font-size,13px);
+        font-weight: var(--microtip-font-weight,normal);
+        text-transform: var(--microtip-text-transform,none);
+        padding: .5em 1em;
+        white-space: nowrap;
+        box-sizing: content-box;
+}
+[role~='tooltip'][data-microtip-position|='bottom']::before {
+        background: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2236px%22%20height%3D%2212px%22%3E%3Cpath%20fill%3D%22rgba%2817,%2017,%2017,%200.9%29%22%20transform%3D%22rotate%28180%2018%206%29%22%20d%3D%22M2.658,0.000%20C-13.615,0.000%2050.938,0.000%2034.662,0.000%20C28.662,0.000%2023.035,12.002%2018.660,12.002%20C14.285,12.002%208.594,0.000%202.658,0.000%20Z%22/%3E%3C/svg%3E) no-repeat;
+        height: 6px;
+        width: 18px;
+        margin-top: 5px;
+        margin-bottom: 0px;
+}
+[role~='tooltip'][data-microtip-position|='bottom']::after {
+        margin-top: 11px;
+}
+[role~='tooltip'][data-microtip-position|='bottom']::before {
+        transform: translate3d(-50%, -10px, 0px);
+        bottom: auto;
+        left: 50%;
+        top: 100%;
+}
+[role~='tooltip'][data-microtip-position|='bottom']::after {
+        transform: translate3d(-50%, -10px, 0px);
+        top: 100%;
+        left: 50%;
+}
+.re__full-menu .re__control-menu .re__notification .re__all-btn {
+        position: relative;
+}
+.re__full-menu .re__control-menu .re__notification .re__marked-products-popup {
+        position: absolute;
+        background: #fff;
+        box-shadow: 0px 8px 20px rgba(182,182,182,0.42);
+        border-radius: 4px;
+        overflow: hidden;
+        width: 400px;
+        left: -163px;
+        z-index: 9999;
+}
+.re__full-menu .re__control-menu .re__notification .re__marked-products-popup div {
+        display: inherit !important;
+}
+.re__full-menu .re__control-menu .re__notification .re__marked-products-popup .re__header, .re__full-menu .re__control-menu .re__notification .re__marked-products-popup .re__content, .re__full-menu .re__control-menu .re__notification .re__marked-products-popup .re__footer {
+        float: left;
+        width: 100%;
+}
+.re__full-menu .re__control-menu .re__notification .re__marked-products-popup .re__header {
+        text-align: center;
+        color: #2c2c2c;
+        padding: 12px 0;
+        border-bottom: 1px solid #F2F2F2;
+        font-family: "Lexend Medium" !important;
+        font-size: 16px !important;
+        line-height: 24px !important;
+        font-weight: normal !important;
+        letter-spacing: -0.2px !important;
+}
+.re__full-menu .re__control-menu .re__notification .re__marked-products-popup .re__content {
+        max-height: 500px;
+        overflow-y: auto;
+}
+.re__full-menu .re__control-menu .re__notification .re__marked-products-popup .re__footer {
+        background: rgba(0,0,0,0);
+        text-align: center;
+        padding: 10px 0;
+        border-top: 1px solid #F2F2F2;
+}
+.re__full-menu .re__control-menu .re__notification .re__marked-products-popup .re__footer::after {
+        content: "";
+        clear: both;
+        display: block;
+}
+.re__link-pr {
+        color: #e03c31;
+        font-family: "Roboto Regular" !important;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: normal !important;
+}
+.re__full-menu .re__control-menu .re__notification .re__marked-products-popup .re__footer .re__marked-products-view-more {
+        display: inline-block;
+        vertical-align: middle;
+}
+.re__link-pr span {
+        font-family: "Roboto Regular" !important;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: normal !important;
+        float: left;
+        margin-right: 4px;
+}
+.re__icon-arrow-right--sm::before {
+        content: "\e9d8";
+}
+.re__link-pr i {
+        font-size: 16px;
+        padding: 2px 0px;
+        float: left;
+}
+[class^='re__icon-'][class*='--sm'], [class*=' re__icon-'][class*='--sm'] {
+        font-size: 16px;
+}
+p {
+        margin-top: 0px;
+        margin-bottom: 1rem;
+}
+.re__full-menu .re__control-menu .re__notification .re__marked-products-popup .re__content p.re__center {
+        margin-top: 24px;
+        margin-bottom: 38px;
+        overflow: hidden;
+        text-align: center;
+}
+.re__full-menu .re__control-menu .re__notification .re__marked-products-popup .re__content img {
+        height: 48px;
+        width: 64px;
+        float: left;
+        border-radius: 4px;
+}
+.re__full-menu .re__control-menu .re__notification .re__marked-products-popup .re__content p.re__center img {
+        float: none;
+        height: 174px;
+        width: 177px;
+}
+.re__full-menu .re__control-menu .re__mnu-notify-icon-unread, .re__full-menu .re__control-menu .mnu-notify-icon-unread {
+        font-family: "Roboto Bold" !important;
+        font-size: 10px;
+        line-height: 12px;
+        font-weight: normal !important;
+        font-size: 10px !important;
+        color: #fff;
+        position: absolute;
+        background: #da1030;
+        border-radius: 6px;
+        left: 27px;
+        top: 2px;
+        min-width: 14px;
+        min-height: 16px;
+        line-height: 16px;
+        padding-left: 1px;
+        padding-right: 1px;
+        text-align: center;
+        cursor: pointer;
+        font-style: normal;
+        border: 2px solid #fff;
+        z-index: 99;
+        display: inline-table;
+        box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+}
+.re__hide {
+        display: none !important;
+}
+.re__state-icon--md {
+        padding: 4px;
+        border-radius: 4px;
+        color: #2c2c2c;
+        background: rgba(0,0,0,0);
+        width: auto;
+        display: inline-block;
+        line-height: 0;
+}
+.re__icon-menu-hamburger::before {
+        content: "\e993";
+}
+.re__icon-arrow-left::before {
+        content: "\e919";
+}
+.re__state-icon--md i {
+        font-size: 24px;
+        line-height: 24px;
+}
+.py-4 {
+	padding-top: 1.5rem !important;
+	padding-bottom: 1.5rem !important;
+}
+.footer {
+	background: #b8b4b4;
+	color: #0e0a0a;
+}
+.container, .container-fluid, .container-xxl {
+	width: 100%;
+	padding-right: var(--gutter-x,.75rem);
+	padding-left: var(--gutter-x,.75rem);
+	margin-right: auto;
+	margin-left: auto;
+}
+/* @media all and (min-width:1400px) */
+.container-xxl, .container-xl, .container-lg, .container {
+	max-width: 1320px;
+}
+.d-flex, .search .suggestions-list .suggestion-item, .favorite-list-item > a, .favorite-list-header, .favorite-list-item .content, .dialog-footer, .dialog-alert, .dialog-confirm, .check-list, .check-inline, .input-group-icon {
+	display: flex !important;
+}
+.justify-content-between, .search .suggestions-list .suggestion-item, .favorite-list-header, .dialog-footer {
+	justify-content: space-between !important;
+}
+.mt-3, .search-row, .social-login.facebook {
+	margin-top: 1rem !important;
+}
+.fs-8 {
+	font-size: 0.81rem !important;
+}
+.text-center, .expandable .block-description figure figcaption, .expandable .expand-bar, .home-investor .investor-control-next, .home-investor .investor-control-prev, .search-home .search-nav input[type=radio] + .nav-type-name, .dropdown-selection-empty, .dropdown-selection-group, .empty-content, .toc_title, .section-title-center, .favorite-empty, .favorite-list-footer, .dialog-footer, .dialog {
+	text-align: center !important;
+}
+p {
+	margin-top: 0px;
+	margin-bottom: 0.5rem;
+}
+.footer-copyright p {
+	margin: 0;
+}
+a {
+	color: #cfa267;
+	text-decoration: unset;
+}
+.d-block {
+	display: block !important;
+}
+.py-1, .search .suggestions-list .suggestion-item {
+	padding-top: 0.25rem !important;
+	padding-bottom: 0.25rem !important;
+}
+.footer a {
+	color: #b3b3b3;
+}
+img, svg {
+	vertical-align: middle;
+}
+.mb-3, .dialog-title {
+	margin-bottom: 1rem !important;
+}
+.fs-6, .expandable .block-description h3, .expandable .block-description .h3, .toc_list {
+	font-size: 1rem !important;
+}
+.fs-7, .expandable .block-description figure figcaption, .header {
+	font-size: 0.87rem !important;
+}
+.text-uppercase, .search-home .search-nav input[type=radio] + .nav-type-name, .section-title, .aside-title, .favorite-list-item .title, .favorite-list-header {
+	text-transform: uppercase !important;
+}
+.text-dark-yellow, .empty-content {
+	color: #b87926 !important;
+}
+.text-bold, .dropdown-selection-empty-text > p, .dropdown-selection-group, .search .suggestions-list .suggestion-group, .header, .section-title, .aside-link.active a, .aside-title, .favorite-list-item .title, .dialog-button, .dialog-body {
+	font-weight: 500;
+}
+ol, ul {
+	padding-left: 2rem;
+}
+ol, ul, dl {
+	margin-top: 0px;
+	margin-bottom: 1rem;
+}
+.list-unstyled, .toc_list {
+	padding-left: 0px;
+	list-style: none;
+}
+.align-items-center, .search .suggestions-list .suggestion-item, .dialog-footer, .input-group-icon {
+	align-items: center !important;
+}
+img:not([src]).lazyload {
+	visibility: hidden;
+}
+.footer-social a {
+	color: #fff;
+}
+.me-2, .favorite-list-item .img {
+	margin-right: 0.5rem !important;
+}
+.icon-phone::before {
+	content: "";
+}
+.mt-2 {
+	margin-top: 0.5rem !important;
+}
+</style>
+
