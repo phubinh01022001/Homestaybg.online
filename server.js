@@ -5,7 +5,7 @@ const app = express();
 const morgan = require('morgan');
 const engine = require('express-handlebars').engine;
 const extname = require('path').extname;
-const methodOverride = require('method-override');
+const methodOverride = require('method-override'); //bỏ
 const route = require('./src/routes');
 const db = require('./src/config/db');
 

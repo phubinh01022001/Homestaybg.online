@@ -10,13 +10,13 @@ class HomeController {
   create(req, res, next) {
     res.render('home/create');
   }
-
+  // User.findOne({ username: username, passwork: passwork})
   search(req, res, next){
     var name = req.body.name;
     var add = req.body.add;
     var price = req.body.price;
     var area = req.body.area;
-
+    
     Home.find({add: add} || {name : name })
       .then(home =>{
         res.render('home/search', { 
