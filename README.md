@@ -13,7 +13,6 @@ $ npm start
 Demo: https://drive.google.com/file/d/1uSPuPBu6BOPAmlcm5vbCds3NVh_zTyQe/view?usp=sharing
 
 Author: Nguyen Phu Binh
-
 Facebook: https://www.facebook.com/binh.nguyenphu.549/
 Github: https://github.com/phubinh01022001
 
