@@ -1,6 +1,0 @@
-- Tải project hoặc clone vào dự án bằng lệnh:
-git clone https://github.com/phubinh01022001/Homestaybg.online.git
-- Tải thư viện: 
-npm i
-- Chạy dự án: 
-npm start
